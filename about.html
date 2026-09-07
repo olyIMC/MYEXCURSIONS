@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MyExcursions | Premium Private Tours & Bespoke Travel</title>
+    <meta name="description" content="With over 30 years of experience, MyExcursions offers private tours, shore excursions, and custom travel experiences worldwide. Meet our founders Tim & Dinora Harwood.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --turquesa: #2CB5C8;
+            --turquesa-dark: #1a8b9e;
+            --turquesa-light: #4FD1E3;
+            --beige: #DCC894;
+            --beige-dark: #C9B47A;
+            --dark: #0F172A;
+            --gray-900: #1F2937;
+            --gray-700: #374151;
+            --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
+            --gray-200: #E5E7EB;
+            --gray-100: #F3F4F6;
+            --bg-light: #F8FAFC;
+            --white: #FFFFFF;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05);
+            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.08);
+            --shadow-xl: 0 20px 40px -10px rgba(0,0,0,0.15);
+            --shadow-hover: 0 25px 50px -12px rgba(44,181,200,0.25);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --radius-full: 100px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',system-ui,sans-serif;color:var(--gray-900);background:var(--white);line-height:1.6;overflow-x:hidden}
+        h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:-0.02em}
+        .section-label{font-family:'Manrope',sans-serif;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--turquesa);margin-bottom:0.75rem;display:inline-flex;align-items:center;gap:0.5rem}
+        .section-label::before{content:'';width:24px;height:2px;background:var(--turquesa);display:inline-block}
+        a{text-decoration:none;color:inherit}
+        button{cursor:pointer;font-family:inherit;border:none;outline:none}
+        img{max-width:100%;display:block}
+        .container{max-width:1400px;margin:0 auto;padding:0 2rem}
+
+        /* HEADER */
+        header{background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(0,0,0,0.04);padding:1rem 0;transition:all 0.3s}
+        .header-container{display:flex;align-items:center;justify-content:space-between}
+        .logo{display:flex;align-items:center;gap:0.5rem}
+        .logo img{height:50px;width:auto;display:block}
+        .nav-menu{display:flex;gap:2.25rem;list-style:none}
+        .nav-menu a{font-family:'Manrope',sans-serif;color:var(--gray-700);font-weight:500;font-size:0.95rem;position:relative;padding:0.5rem 0;transition:color 0.3s}
+        .nav-menu a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--turquesa);transition:width 0.3s}
+        .nav-menu a:hover{color:var(--turquesa)}
+        .nav-menu a:hover::after{width:100%}
+        .header-actions{display:flex;align-items:center;gap:1rem}
+        .icon-btn{width:40px;height:40px;background:var(--gray-100);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gray-700);transition:all 0.3s}
+        .icon-btn:hover{background:var(--turquesa);color:white;transform:translateY(-2px)}
+        .icon-btn svg{width:18px;height:18px}
+        .btn-primary{background:var(--dark);color:white;padding:0.75rem 1.75rem;border-radius:var(--radius-full);font-weight:600;font-size:0.9rem;font-family:'Manrope',sans-serif;transition:all 0.3s;display:inline-flex;align-items:center;gap:0.5rem}
+        .btn-primary:hover{background:var(--turquesa);transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+        .btn-primary svg{width:16px;height:16px}
+        .mobile-menu-btn{display:none;width:40px;height:40px;background:var(--gray-100);border-radius:50%;align-items:center;justify-content:center}
+        .mobile-menu-btn svg{width:20px;height:20px}
+
+        /* HERO ABOUT */
+        .hero-about{position:relative;height:70vh;min-height:500px;overflow:hidden;display:flex;align-items:center}
+        .hero-about-bg{position:absolute;inset:0;z-index:0}
+        .hero-about-bg img{width:100%;height:100%;object-fit:cover;animation:zoomOut 20s ease-out forwards}
+        @keyframes zoomOut{from{transform:scale(1.1)}to{transform:scale(1)}}
+        .hero-about::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,42,0.3) 0%,rgba(15,23,42,0.6) 100%);z-index:1}
+        .hero-about-content{position:relative;z-index:2;max-width:860px;color:white;padding:0 2rem;margin-left:8%}
+        .hero-about h1{font-size:clamp(2.8rem,6vw,5.2rem);font-weight:700;line-height:1.05;margin-bottom:1.5rem;letter-spacing:-0.03em}
+        .hero-about h1 .accent{font-style:italic;background:linear-gradient(120deg,var(--beige) 0%,var(--beige-dark) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+        .hero-about-subtitle{font-size:1.15rem;line-height:1.7;max-width:620px;color:rgba(255,255,255,0.85)}
+
+        /* ABOUT INTRO */
+        .about-intro{padding:5rem 2rem;max-width:1400px;margin:0 auto}
+        .about-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .about-intro-content .section-label{margin-bottom:1rem}
+        .about-intro-content h2{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin-bottom:1.5rem;color:var(--dark)}
+        .about-intro-content h2 .accent{font-style:italic;color:var(--turquesa)}
+        .about-intro-content p{color:var(--gray-500);font-size:1.05rem;line-height:1.8;margin-bottom:1.5rem}
+        .about-intro-content .highlight{color:var(--turquesa);font-weight:600}
+        .about-intro-image{position:relative;border-radius:var(--radius-xl);overflow:hidden;height:400px}
+        .about-intro-image img{width:100%;height:100%;object-fit:cover}
+        .about-intro-image .experience-badge{position:absolute;bottom:2rem;left:2rem;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);padding:1.5rem;border-radius:var(--radius-lg);color:var(--dark);display:flex;flex-direction:column;align-items:center;text-align:center}
+        .about-intro-image .experience-badge .num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--turquesa);line-height:1}
+        .about-intro-image .experience-badge .label{font-size:0.8rem;color:var(--gray-500)}
+
+        /* VALUES */
+        .values-section{background:var(--bg-light);padding:5rem 2rem}
+        .values-container{max-width:1400px;margin:0 auto}
+        .values-header{text-align:center;margin-bottom:4rem}
+        .values-header h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:1rem;color:var(--dark)}
+        .values-header p{color:var(--gray-500);font-size:1.05rem;max-width:600px;margin:0 auto}
+        .values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
+        .value-item{background:white;padding:2.5rem 2rem;border-radius:var(--radius-xl);text-align:center;transition:all 0.4s;border:1px solid var(--gray-100);position:relative;overflow:hidden}
+        .value-item:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:transparent}
+        .value-item::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--turquesa),var(--turquesa-light));opacity:0;transition:opacity 0.3s}
+        .value-item:hover::before{opacity:1}
+        .value-icon{width:64px;height:64px;background:linear-gradient(135deg,rgba(44,181,200,0.1) 0%,rgba(44,181,200,0.05) 100%);border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;color:var(--turquesa)}
+        .value-icon svg{width:32px;height:32px}
+        .value-item h3{font-size:1.2rem;margin-bottom:0.75rem;color:var(--dark)}
+        .value-item p{color:var(--gray-500);font-size:0.95rem;line-height:1.6}
+
+        /* TIMELINE */
+        .timeline-section{padding:5rem 2rem;max-width:1400px;margin:0 auto}
+        .timeline-header{text-align:center;margin-bottom:4rem}
+        .timeline-header h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:1rem;color:var(--dark)}
+        .timeline-header p{color:var(--gray-500);font-size:1.05rem;max-width:600px;margin:0 auto}
+        .timeline{position:relative;padding:2rem 0}
+        .timeline::before{content:'';position:absolute;left:50%;transform:translateX(-50%);width:2px;height:100%;background:var(--gray-200)}
+        .timeline-item{display:flex;justify-content:flex-end;padding-right:3rem;position:relative;margin-bottom:4rem;width:50%}
+        .timeline-item:nth-child(odd){justify-content:flex-start;padding-left:3rem;padding-right:0;margin-left:50%}
+        .timeline-item:nth-child(odd) .timeline-content{text-align:right}
+        .timeline-item:nth-child(odd) .timeline-content .timeline-icon{right:auto;left:-16px}
+        .timeline-dot{position:absolute;top:8px;width:16px;height:16px;background:var(--turquesa);border-radius:50%;border:4px solid var(--white);box-shadow:var(--shadow-sm);z-index:1}
+        .timeline-item:nth-child(even) .timeline-dot{right:-8px}
+        .timeline-item:nth-child(odd) .timeline-dot{left:-8px}
+        .timeline-content{background:var(--white);padding:2rem;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);border:1px solid var(--gray-100);transition:all 0.3s}
+        .timeline-content:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+        .timeline-content .year{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--turquesa);margin-bottom:0.5rem}
+        .timeline-content h4{font-size:1.1rem;margin-bottom:0.5rem;color:var(--dark)}
+        .timeline-content p{color:var(--gray-500);font-size:0.95rem;line-height:1.6}
+
+        /* TEAM (Fundadores) */
+        .team-section{background:var(--bg-light);padding:5rem 2rem}
+        .team-container{max-width:1400px;margin:0 auto}
+        .team-header{text-align:center;margin-bottom:4rem}
+        .team-header h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:1rem;color:var(--dark)}
+        .team-header p{color:var(--gray-500);font-size:1.05rem;max-width:600px;margin:0 auto}
+        .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+        .team-card{background:white;border-radius:var(--radius-xl);overflow:hidden;transition:all 0.4s;border:1px solid var(--gray-100);text-align:center}
+        .team-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:transparent}
+        .team-image{height:250px;overflow:hidden}
+        .team-image img{width:100%;height:100%;object-fit:cover}
+        .team-info{padding:1.5rem}
+        .team-info h4{font-size:1.1rem;margin-bottom:0.3rem;color:var(--dark)}
+        .team-info .role{color:var(--turquesa);font-size:0.85rem;font-weight:600;margin-bottom:0.5rem}
+        .team-info p{color:var(--gray-500);font-size:0.9rem;line-height:1.6}
+
+        /* CTA CORREGIDA Y COMPLETA */
+        .cta-section{margin:5rem 2rem;max-width:1400px;margin-left:auto;margin-right:auto;background:linear-gradient(135deg,#0F172A 0%,#1e293b 100%);border-radius:var(--radius-xl);padding:5rem 3rem;text-align:center;color:white;position:relative;overflow:hidden}
+        .cta-section::before{content:'';position:absolute;top:-50%;left:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(44,181,200,0.2) 0%,transparent 70%);border-radius:50%}
+        .cta-section::after{content:'';position:absolute;bottom:-50%;right:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(220,200,148,0.15) 0%,transparent 70%);border-radius:50%}
+        .cta-content{max-width:700px;margin:0 auto;position:relative;z-index:1}
+        .cta-section h2{font-size:clamp(2.2rem,5vw,3.2rem);margin-bottom:1rem;color:white;line-height:1.1}
+        .cta-section h2 .accent{font-style:italic;color:var(--turquesa-light)}
+        .cta-section p{font-size:1.1rem;margin-bottom:2.5rem;color:rgba(255,255,255,0.75);line-height:1.7}
+        .cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+        .cta-btn{padding:1rem 2rem;border-radius:var(--radius-full);font-weight:600;transition:all 0.3s;font-family:'Manrope',sans-serif;display:inline-flex;align-items:center;gap:0.5rem}
+        .cta-btn-primary{background:var(--turquesa);color:white}
+        .cta-btn-primary:hover{background:var(--turquesa-light);transform:translateY(-3px);box-shadow:0 10px 30px rgba(44,181,200,0.4)}
+        .cta-btn-secondary{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);color:white;border:1px solid rgba(255,255,255,0.2)}
+        .cta-btn-secondary:hover{background:rgba(255,255,255,0.2);transform:translateY(-3px)}
+        .cta-btn svg{width:18px;height:18px}
+
+        /* FOOTER */
+        footer{background:#0A0F1C;color:rgba(255,255,255,0.6);padding:5rem 2rem 2rem}
+        .footer-content{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:3rem}
+        .footer-brand .logo{color:white;margin-bottom:1rem}
+        .footer-brand p{font-size:0.9rem;line-height:1.7;margin-bottom:1.5rem}
+        .social-links{display:flex;gap:0.75rem}
+        .social-link{width:40px;height:40px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);transition:all 0.3s}
+        .social-link:hover{background:var(--turquesa);color:white;border-color:var(--turquesa);transform:translateY(-3px)}
+        .social-link svg{width:16px;height:16px}
+        .footer-section h4{color:white;margin-bottom:1.5rem;font-size:1rem;font-family:'Manrope',sans-serif;font-weight:700}
+        .footer-section ul{list-style:none}
+        .footer-section ul li{margin-bottom:0.7rem}
+        .footer-section a{color:rgba(255,255,255,0.6);font-size:0.9rem;transition:all 0.3s;display:inline-flex;align-items:center;gap:0.3rem}
+        .footer-section a:hover{color:var(--turquesa-light);gap:0.5rem}
+        .newsletter-form{display:flex;gap:0.5rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-full);padding:0.4rem}
+        .newsletter-form input{flex:1;background:transparent;border:none;outline:none;color:white;padding:0.5rem 1rem;font-family:inherit;font-size:0.9rem}
+        .newsletter-form input::placeholder{color:rgba(255,255,255,0.4)}
+        .newsletter-form button{background:var(--turquesa);color:white;padding:0.6rem 1.2rem;border-radius:var(--radius-full);font-weight:600;font-size:0.85rem;transition:all 0.3s}
+        .newsletter-form button:hover{background:var(--turquesa-light)}
+        .footer-bottom{max-width:1400px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.08);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.85rem}
+        .footer-legal{display:flex;gap:1.5rem}
+
+        /* WHATSAPP */
+        .whatsapp-float{position:fixed;bottom:30px;right:30px;background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,0.4);z-index:999;transition:all 0.3s}
+        .whatsapp-float:hover{transform:scale(1.1) translateY(-3px);box-shadow:0 15px 40px rgba(37,211,102,0.5)}
+        .whatsapp-float::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:#25D366;opacity:0.3;animation:ripple 2s infinite;z-index:-1}
+        @keyframes ripple{0%{transform:scale(1);opacity:0.3}100%{transform:scale(1.5);opacity:0}}
+        .whatsapp-float svg{width:30px;height:30px}
+
+        /* MOBILE NAV */
+        .mobile-bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);box-shadow:0 -5px 30px rgba(0,0,0,0.08);padding:0.6rem 0;z-index:998}
+        .mobile-nav-items{display:flex;justify-content:space-around;max-width:500px;margin:0 auto}
+        .mobile-nav-item{display:flex;flex-direction:column;align-items:center;gap:0.25rem;color:var(--gray-500);font-size:0.7rem;font-weight:600;font-family:'Manrope',sans-serif;padding:0.5rem 1rem;transition:color 0.3s;text-transform:uppercase;letter-spacing:0.05em}
+        .mobile-nav-item svg{width:22px;height:22px}
+        .mobile-nav-item.active{color:var(--turquesa)}
+
+        /* REVEAL */
+        .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.4,0,0.2,1)}
+        .reveal.visible{opacity:1;transform:translateY(0)}
+
+        /* RESPONSIVE */
+        @media (max-width:992px){
+            .about-intro-grid{grid-template-columns:1fr;gap:2rem}
+            .about-intro-image{height:300px}
+            .timeline-item{padding-right:1.5rem;width:100%;justify-content:flex-end}
+            .timeline-item:nth-child(odd){padding-left:1.5rem;padding-right:0;margin-left:0;justify-content:flex-start}
+            .timeline-item:nth-child(odd) .timeline-content{text-align:left}
+            .timeline-item:nth-child(odd) .timeline-dot{left:-8px}
+            .timeline::before{left:16px}
+            .timeline-item:nth-child(even) .timeline-dot{right:auto;left:-8px}
+            .footer-content{grid-template-columns:1fr 1fr;gap:2rem}
+        }
+        @media (max-width:768px){
+            .nav-menu{display:none}
+            .mobile-menu-btn{display:flex}
+            .hero-about{height:60vh;min-height:400px}
+            .hero-about-content{margin-left:0;padding:0 1.5rem}
+            .about-intro{padding:3rem 1.5rem}
+            .values-section{padding:3rem 1.5rem}
+            .timeline-section{padding:3rem 1.5rem}
+            .team-section{padding:3rem 1.5rem}
+            .cta-section{padding:3rem 1.5rem;margin:3rem 1rem}
+            footer{padding:3rem 1.5rem 1.5rem}
+            .footer-content{grid-template-columns:1fr}
+            .footer-bottom{flex-direction:column;text-align:center}
+            .mobile-bottom-nav{display:block}
+            body{padding-bottom:80px}
+        }
+        @media (max-width:480px){
+            .hero-about h1{font-size:2.3rem}
+            .hero-about-subtitle{font-size:1rem}
+            .about-intro-image .experience-badge{padding:1rem;bottom:1rem;left:1rem}
+            .about-intro-image .experience-badge .num{font-size:1.8rem}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <!-- LOGO CON RUTA LOCAL -->
+                <img src="file:///C:/Users/descarga/Desktop/ME-Logo-2.jpg" alt="MyExcursions Logo">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Shore Excursions</a></li>
+                <li><a href="#">Private Tours</a></li>
+                <li><a href="#">Overland</a></li>
+                <li><a href="#" style="color:var(--turquesa)">About</a></li>
+            </ul>
+            <div class="header-actions">
+                <button class="icon-btn" aria-label="Search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                </button>
+                <button class="icon-btn" aria-label="Favorites">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                </button>
+                <button class="btn-primary">
+                    Plan My Trip
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO ABOUT -->
+    <section class="hero-about">
+        <div class="hero-about-bg">
+            <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1600" alt="About MyExcursions" loading="eager">
+        </div>
+        <div class="hero-about-content">
+            <h1>We Don't Sell Vacations.<br><span class="accent">We Craft Memories.</span></h1>
+            <p class="hero-about-subtitle">For over 30 years, MyExcursions has been the secret behind thousands of unforgettable trips. We are a team of passionate locals, explorers, and dreamers who believe that travel isn't about checking boxes — it's about feeling alive.</p>
+        </div>
+    </section>
+
+    <!-- ABOUT INTRO -->
+    <section class="about-intro reveal">
+        <div class="about-intro-grid">
+            <div class="about-intro-content">
+                <div class="section-label">Our Story</div>
+                <h2>Travel Beyond <span class="accent">Expectations</span></h2>
+                <p>MyExcursions offers custom experiences around the globe, whether on land or from a cruise. With over <span class="highlight">1,000 destinations</span> and <span class="highlight">3,000 private programs</span>, we provide a wide range of private options — whether for a couple, family, or groups traveling together.</p>
+                <p>From the villages of <span class="highlight">Cinque Terre</span> in Italy to the majestic <span class="highlight">Iguazu Falls</span>, from the temples of <span class="highlight">Beijing</span> to the palaces of <span class="highlight">Paris, Rome, and London</span> — our programs are designed for you to enjoy each destination, no matter where your dreams may take you.</p>
+                <p><strong>We don't just describe tours — we sell memories.</strong></p>
+            </div>
+            <div class="about-intro-image">
+                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800" alt="Cinque Terre Italy">
+                <div class="experience-badge">
+                    <span class="num">30+</span>
+                    <span class="label">Years of Experience</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="values-section">
+        <div class="values-container">
+            <div class="values-header reveal">
+                <div class="section-label" style="justify-content:center">Our Values</div>
+                <h2>What Sets Us Apart</h2>
+                <p>Every detail is thoughtfully designed to create unforgettable memories, backed by our commitment to excellence.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-item reveal">
+                    <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+                    <h3>100% Private & Tailored</h3>
+                    <p>Every experience is designed exclusively for you. No groups, no strangers — just you and your personal guide.</p>
+                </div>
+                <div class="value-item reveal">
+                    <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+                    <h3>Handpicked Destinations</h3>
+                    <p>From Cinque Terre to Iguazu Falls, we don't sell cookie-cutter tours. Each experience is crafted with local knowledge.</p>
+                </div>
+                <div class="value-item reveal">
+                    <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2zM12 6v6l4 2"/></svg></div>
+                    <h3>24/7 Concierge Support</h3>
+                    <p>From booking to departure, our team is here for you. Chat with us anytime via WhatsApp.</p>
+                </div>
+                <div class="value-item reveal">
+                    <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div>
+                    <h3>Best Price Guarantee</h3>
+                    <p>Luxury experiences at fair prices. No hidden fees, no commissions — just transparent, exceptional value.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="timeline-section">
+        <div class="timeline-header reveal">
+            <div class="section-label" style="justify-content:center">Our Journey</div>
+            <h2>30+ Years of Excellence</h2>
+            <p>A legacy of creating unforgettable travel experiences for discerning travelers around the world.</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="year">1986</div>
+                    <h4>The Cruise Industry Begins</h4>
+                    <p>Tim joins NCL as a Shore Excursion Manager onboard the SS Norway — then the largest cruise ship in the world with 1,500 passengers.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="year">1995</div>
+                    <h4>Global Leadership</h4>
+                    <p>Tim joins Silversea Cruises to head up their corporate Shore Excursion Department, expanding his global knowledge of destinations and excursions.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="year">2005</div>
+                    <h4>MyExcursions is Born</h4>
+                    <p>With over 100 countries visited and decades of expertise, Tim and Dinora launch MyExcursions with a vision of private, custom, and exclusive experiences.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="year">2020</div>
+                    <h4>15 Years of Service</h4>
+                    <p>MyExcursions celebrates 15 years of providing top-notch service, growing beyond shore excursions while keeping core values of customer service, prompt communication, and quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM (Fundadores) -->
+    <section class="team-section">
+        <div class="team-container">
+            <div class="team-header reveal">
+                <div class="section-label" style="justify-content:center">Our Founders</div>
+                <h2>Passionate Explorers</h2>
+                <p>Meet the people behind the experiences — a dedicated team of travel experts who bring your dreams to life.</p>
+            </div>
+            <div class="team-grid">
+                <!-- TIM HARWOOD -->
+                <div class="team-card reveal">
+                    <div class="team-image">
+                        <!-- FOTO REAL DE TIM (Ruta local) -->
+                        <img src="file:///C:/Users/descarga/Desktop/tim-harwood.jpg" alt="Tim Harwood - President & Owner">
+                    </div>
+                    <div class="team-info">
+                        <h4>Tim Harwood</h4>
+                        <div class="role">President & Owner</div>
+                        <p>Following an early career in banking, Tim found his true passion and moved to the cruise industry in 1986. He joined NCL as a Shore Excursion Manager onboard the SS Norway.</p>
+                        <p>His shipboard career spanned 9 years with Royal Viking Line, Sea Goddess, and Ocean Cruise Line. In 1995, he was asked to join Silversea Cruises to head up their Shore Excursion Department, and later recruited by Radisson (now Regent) Seven Seas Cruises to run their global Shore Excursion Department until the end of 2004.</p>
+                        <p>Between 1986 and 2004, he travelled extensively, visiting over 100 countries. With this knowledge, he founded MyExcursions in early 2005.</p>
+                    </div>
+                </div>
+
+                <!-- DINORA HARWOOD -->
+                <div class="team-card reveal">
+                    <div class="team-image">
+                        <!-- FOTO REAL DE DINORA (Ruta local) -->
+                        <img src="file:///C:/Users/descarga/Desktop/dinora-harwood.jpg" alt="Dinora Harwood - Vice President & Owner">
+                    </div>
+                    <div class="team-info">
+                        <h4>Dinora Harwood</h4>
+                        <div class="role">Vice President & Owner</div>
+                        <p>Dinora brings to MyExcursions over 25 years of experience in finance, accounting, and logistics. She graduated in 1987-89 with two Bachelor degrees — one in Marketing and the other in International Business.</p>
+                        <p>Initially concerned about the risks, she quickly saw that they had created a niche in the market, providing clients top-notch service when it matters most.</p>
+                        <p>She wears several hats — running a family, a home, and enjoying her workouts — and she is the back office of MyExcursions. She confirms services and handles the financial aspects, ensuring each booking is treated with the highest level of quality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA CORREGIDA Y COMPLETA -->
+    <section class="cta-section reveal">
+        <div class="cta-content">
+            <div class="section-label" style="justify-content:center;color:var(--turquesa-light)">Start Your Journey</div>
+            <h2>Craft Your Own <span class="accent">Adventure</span></h2>
+            <p>Whether it's a private catamaran, a shore excursion, a wine tasting, or a destination wedding — we make it happen. Our experts are ready to design a personalized journey just for you.</p>
+            <div class="cta-buttons">
+                <a href="#" class="cta-btn cta-btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                    Call Our Manager
+                </a>
+                <a href="#" class="cta-btn cta-btn-secondary">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+                    WhatsApp Chat
+                </a>
+                <a href="#" class="cta-btn cta-btn-secondary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    Request Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <!-- LOGO EN EL FOOTER CON RUTA LOCAL -->
+                <a href="/" class="logo"><img src="file:///C:/Users/descarga/Desktop/ME-Logo-2.jpg" alt="MyExcursions Logo" style="height:40px;"></a>
+                <p>Over 1,000 destinations and 3,000 private experiences. Tailored for couples, families, and discerning groups worldwide.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg></a>
+                    <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+                    <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#0A0F1C"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Explore</h4>
+                <ul><li><a href="#">Europe</a></li><li><a href="#">Americas</a></li><li><a href="#">Asia</a></li><li><a href="#">Africa</a></li><li><a href="#">Oceania</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul><li><a href="#">Shore Excursions</a></li><li><a href="#">Private Tours</a></li><li><a href="#">Overland Programs</a></li><li><a href="#">Destination Weddings</a></li><li><a href="#">Luxury Yachts</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>Stay Inspired</h4>
+                <p style="font-size:0.9rem;margin-bottom:1rem">Get exclusive travel guides and special offers directly in your inbox.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault();alert('Thanks for subscribing!')">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 MyExcursions. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/584142894116" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-bottom-nav">
+        <div class="mobile-nav-items">
+            <a href="#" class="mobile-nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a>
+            <a href="#" class="mobile-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>Search</a>
+            <a href="#" class="mobile-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Favorites</a>
+            <a href="#" class="mobile-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</a>
+        </div>
+    </nav>
+
+    <script>
+        // Scroll Reveal
+        const revealElements=document.querySelectorAll('.reveal');
+        const observer=new IntersectionObserver((entries)=>{
+            entries.forEach((entry,index)=>{
+                if(entry.isIntersecting){
+                    setTimeout(()=>entry.target.classList.add('visible'),index*50);
+                    observer.unobserve(entry.target);
+                }
+            });
+        },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+        revealElements.forEach(el=>observer.observe(el));
+
+        // Mobile menu
+        const mobileBtn=document.querySelector('.mobile-menu-btn');
+        const navMenu=document.querySelector('.nav-menu');
+        mobileBtn.addEventListener('click',()=>{
+            navMenu.classList.toggle('open');
+            navMenu.style.display=navMenu.classList.contains('open')?'flex':'none';
+            if(window.innerWidth<=768&&navMenu.classList.contains('open')){
+                navMenu.style.flexDirection='column';
+                navMenu.style.position='absolute';
+                navMenu.style.top='100%';
+                navMenu.style.left='0';
+                navMenu.style.width='100%';
+                navMenu.style.background='white';
+                navMenu.style.padding='2rem';
+                navMenu.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)';
+                navMenu.style.gap='1.5rem';
+                navMenu.style.zIndex='999';
+            }
+        });
+
+        // Mobile bottom nav
+        document.querySelectorAll('.mobile-nav-item').forEach(item=>{
+            item.addEventListener('click',(e)=>{
+                e.preventDefault();
+                document.querySelectorAll('.mobile-nav-item').forEach(i=>i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+
+        // Header scroll
+        window.addEventListener('scroll',()=>{
+            const header=document.querySelector('header');
+            const currentScroll=window.pageYOffset;
+            header.style.boxShadow=currentScroll>50?'0 2px 20px rgba(0,0,0,0.05)':'none';
+        });
+    </script>
+</body>
+</html>

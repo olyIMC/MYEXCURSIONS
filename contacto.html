@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact MyExcursions | Get in Touch for Private Tours & Excursions</title>
+    <meta name="description" content="Contact MyExcursions for private tours, shore excursions, and bespoke travel experiences. Reach out via phone, email, or WhatsApp — we're here to help.">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/playfair-display@latest/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/inter@latest/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/manrope@latest/index.css">
+    <style>
+        :root {
+            --turquesa: #2CB5C8;
+            --turquesa-dark: #1a8b9e;
+            --turquesa-light: #4FD1E3;
+            --beige: #DCC894;
+            --beige-dark: #C9B47A;
+            --dark: #0F172A;
+            --gray-900: #1F2937;
+            --gray-700: #374151;
+            --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
+            --gray-200: #E5E7EB;
+            --gray-100: #F3F4F6;
+            --bg-light: #F8FAFC;
+            --white: #FFFFFF;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05);
+            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.08);
+            --shadow-xl: 0 20px 40px -10px rgba(0,0,0,0.15);
+            --shadow-hover: 0 25px 50px -12px rgba(44,181,200,0.25);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --radius-full: 100px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',system-ui,sans-serif;color:var(--gray-900);background:var(--white);line-height:1.6;overflow-x:hidden}
+        h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:-0.02em}
+        .section-label{font-family:'Manrope',sans-serif;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--turquesa);margin-bottom:0.75rem;display:inline-flex;align-items:center;gap:0.5rem}
+        .section-label::before{content:'';width:24px;height:2px;background:var(--turquesa);display:inline-block}
+        a{text-decoration:none;color:inherit}
+        button{cursor:pointer;font-family:inherit;border:none;outline:none}
+        img{max-width:100%;display:block}
+        .container{max-width:1400px;margin:0 auto;padding:0 2rem}
+
+        /* LOGO SVG */
+        .logo-svg{height:52px;width:auto;display:block}
+
+        /* HEADER */
+        header{background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(0,0,0,0.04);padding:1rem 0;transition:all 0.3s}
+        .header-container{display:flex;align-items:center;justify-content:space-between}
+        .logo{display:flex;align-items:center;gap:0.5rem}
+        .nav-menu{display:flex;gap:2.25rem;list-style:none}
+        .nav-menu a{font-family:'Manrope',sans-serif;color:var(--gray-700);font-weight:500;font-size:0.95rem;position:relative;padding:0.5rem 0;transition:color 0.3s}
+        .nav-menu a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--turquesa);transition:width 0.3s}
+        .nav-menu a:hover{color:var(--turquesa)}
+        .nav-menu a:hover::after{width:100%}
+        .header-actions{display:flex;align-items:center;gap:1rem}
+        .icon-btn{width:40px;height:40px;background:var(--gray-100);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gray-700);transition:all 0.3s}
+        .icon-btn:hover{background:var(--turquesa);color:white;transform:translateY(-2px)}
+        .icon-btn svg{width:18px;height:18px}
+        .btn-primary{background:var(--dark);color:white;padding:0.75rem 1.75rem;border-radius:var(--radius-full);font-weight:600;font-size:0.9rem;font-family:'Manrope',sans-serif;transition:all 0.3s;display:inline-flex;align-items:center;gap:0.5rem}
+        .btn-primary:hover{background:var(--turquesa);transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+        .btn-primary svg{width:16px;height:16px}
+        .mobile-menu-btn{display:none;width:40px;height:40px;background:var(--gray-100);border-radius:50%;align-items:center;justify-content:center}
+        .mobile-menu-btn svg{width:20px;height:20px}
+
+        /* HERO CONTACT */
+        .hero-contact{position:relative;height:65vh;min-height:480px;overflow:hidden;display:flex;align-items:center}
+        .hero-contact-bg{position:absolute;inset:0;z-index:0}
+        .hero-contact-bg img{width:100%;height:100%;object-fit:cover;animation:zoomOut 20s ease-out forwards}
+        @keyframes zoomOut{from{transform:scale(1.1)}to{transform:scale(1)}}
+        .hero-contact::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,42,0.3) 0%,rgba(15,23,42,0.65) 100%);z-index:1}
+        .hero-contact-content{position:relative;z-index:2;max-width:860px;color:white;padding:0 2rem;margin-left:8%}
+        .hero-contact h1{font-size:clamp(2.8rem,6vw,5.2rem);font-weight:700;line-height:1.05;margin-bottom:1.5rem;letter-spacing:-0.03em}
+        .hero-contact h1 .accent{font-style:italic;background:linear-gradient(120deg,var(--beige) 0%,var(--beige-dark) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+        .hero-contact-subtitle{font-size:1.15rem;line-height:1.7;max-width:620px;color:rgba(255,255,255,0.85)}
+
+        /* CONTACT GRID */
+        .contact-section{padding:5rem 2rem;max-width:1400px;margin:0 auto}
+        .contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:4rem;align-items:start}
+        .contact-form-wrap{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-xl);padding:3rem;box-shadow:var(--shadow-md)}
+        .contact-form-wrap .section-label{margin-bottom:1rem}
+        .contact-form-wrap h2{font-size:clamp(1.8rem,3.2vw,2.5rem);line-height:1.1;margin-bottom:0.75rem;color:var(--dark)}
+        .contact-form-wrap h2 .accent{font-style:italic;color:var(--turquesa)}
+        .contact-form-wrap > p{color:var(--gray-500);font-size:0.98rem;margin-bottom:2rem}
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.25rem}
+        .form-group{margin-bottom:1.25rem}
+        .form-group label{display:block;font-family:'Manrope',sans-serif;font-size:0.82rem;font-weight:700;color:var(--gray-700);margin-bottom:0.5rem;letter-spacing:0.02em}
+        .form-group input,.form-group select,.form-group textarea{width:100%;padding:0.9rem 1rem;border:1px solid var(--gray-200);border-radius:var(--radius-md);font-family:'Inter',sans-serif;font-size:0.95rem;color:var(--gray-900);background:var(--white);transition:all 0.3s;outline:none}
+        .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--turquesa);box-shadow:0 0 0 3px rgba(44,181,200,0.12)}
+        .form-group textarea{resize:vertical;min-height:120px}
+        .form-submit{width:100%;padding:1rem;background:var(--dark);color:white;border-radius:var(--radius-full);font-family:'Manrope',sans-serif;font-weight:700;font-size:0.95rem;letter-spacing:0.02em;transition:all 0.3s;display:inline-flex;align-items:center;justify-content:center;gap:0.5rem}
+        .form-submit:hover{background:var(--turquesa);transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+        .form-submit svg{width:18px;height:18px}
+        .form-note{font-size:0.8rem;color:var(--gray-400);text-align:center;margin-top:1rem}
+
+        /* CONTACT INFO */
+        .contact-info{position:sticky;top:100px}
+        .contact-info .section-label{margin-bottom:1rem}
+        .contact-info h2{font-size:clamp(1.8rem,3.2vw,2.5rem);line-height:1.1;margin-bottom:1rem;color:var(--dark)}
+        .contact-info h2 .accent{font-style:italic;color:var(--turquesa)}
+        .contact-info > p{color:var(--gray-500);font-size:0.98rem;margin-bottom:2rem;line-height:1.7}
+        .contact-methods{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem}
+        .contact-method{display:flex;gap:1rem;align-items:flex-start;padding:1.25rem;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);transition:all 0.3s}
+        .contact-method:hover{transform:translateX(5px);border-color:var(--turquesa);box-shadow:var(--shadow-md)}
+        .contact-method .cm-icon{width:48px;height:48px;flex:none;border-radius:12px;background:linear-gradient(135deg,rgba(44,181,200,0.1) 0%,rgba(44,181,200,0.05) 100%);display:flex;align-items:center;justify-content:center;color:var(--turquesa)}
+        .contact-method .cm-icon svg{width:22px;height:22px}
+        .contact-method .cm-content{flex:1}
+        .contact-method .cm-label{font-family:'Manrope',sans-serif;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gray-400);margin-bottom:0.25rem}
+        .contact-method .cm-value{font-size:1rem;color:var(--gray-900);font-weight:600;line-height:1.4}
+        .contact-method .cm-value a{color:var(--gray-900);transition:color 0.3s}
+        .contact-method .cm-value a:hover{color:var(--turquesa)}
+
+        .quick-contact{background:linear-gradient(135deg,var(--dark) 0%,#1e293b 100%);color:white;border-radius:var(--radius-xl);padding:2rem;position:relative;overflow:hidden}
+        .quick-contact::before{content:'';position:absolute;top:-50%;right:-30%;width:300px;height:300px;background:radial-gradient(circle,rgba(44,181,200,0.25) 0%,transparent 70%);border-radius:50%}
+        .quick-contact h3{font-size:1.3rem;margin-bottom:0.75rem;color:white;position:relative}
+        .quick-contact p{font-size:0.9rem;color:rgba(255,255,255,0.75);margin-bottom:1.5rem;line-height:1.6;position:relative}
+        .quick-contact .qc-buttons{display:flex;gap:0.75rem;flex-wrap:wrap;position:relative}
+        .qc-btn{padding:0.75rem 1.25rem;border-radius:var(--radius-full);font-family:'Manrope',sans-serif;font-weight:600;font-size:0.85rem;transition:all 0.3s;display:inline-flex;align-items:center;gap:0.5rem}
+        .qc-btn svg{width:16px;height:16px}
+        .qc-btn-whatsapp{background:#25D366;color:white}
+        .qc-btn-whatsapp:hover{background:#128C7E;transform:translateY(-2px)}
+        .qc-btn-phone{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);color:white;border:1px solid rgba(255,255,255,0.2)}
+        .qc-btn-phone:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
+
+        /* FAQ */
+        .faq-section{background:var(--bg-light);padding:5rem 2rem}
+        .faq-container{max-width:1400px;margin:0 auto}
+        .faq-header{text-align:center;margin-bottom:3.5rem}
+        .faq-header h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:1rem;color:var(--dark)}
+        .faq-header p{color:var(--gray-500);font-size:1.05rem;max-width:600px;margin:0 auto}
+        .faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+        .faq-item{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:1.75rem;transition:all 0.3s}
+        .faq-item:hover{border-color:var(--turquesa);box-shadow:var(--shadow-md)}
+        .faq-item h4{font-size:1.05rem;margin-bottom:0.75rem;color:var(--dark);display:flex;gap:0.75rem;align-items:flex-start}
+        .faq-item h4 .faq-num{font-family:'Playfair Display',serif;font-style:italic;color:var(--turquesa);font-size:1.1rem;flex:none}
+        .faq-item p{color:var(--gray-500);font-size:0.92rem;line-height:1.7}
+
+        /* RESPONSE TIME */
+        .response-section{padding:5rem 2rem;max-width:1400px;margin:0 auto}
+        .response-card{background:linear-gradient(135deg,#0F172A 0%,#1e293b 100%);border-radius:var(--radius-xl);padding:4rem 3rem;color:white;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;overflow:hidden}
+        .response-card::before{content:'';position:absolute;top:-50%;left:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(44,181,200,0.2) 0%,transparent 70%);border-radius:50%}
+        .response-card::after{content:'';position:absolute;bottom:-50%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(220,200,148,0.15) 0%,transparent 70%);border-radius:50%}
+        .response-content{position:relative;z-index:1}
+        .response-content .section-label{color:var(--turquesa-light)}
+        .response-content .section-label::before{background:var(--turquesa-light)}
+        .response-content h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:1rem;color:white;line-height:1.15}
+        .response-content h2 .accent{font-style:italic;color:var(--turquesa-light)}
+        .response-content p{color:rgba(255,255,255,0.75);font-size:1rem;line-height:1.7}
+        .response-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;position:relative;z-index:1}
+        .r-stat{background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-lg);padding:1.5rem;text-align:center}
+        .r-stat b{font-family:'Playfair Display',serif;font-size:2rem;color:var(--beige);display:block;line-height:1;margin-bottom:0.5rem}
+        .r-stat span{font-family:'Manrope',sans-serif;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.7)}
+
+        /* CTA */
+        .cta-section{margin:5rem 2rem;max-width:1400px;margin-left:auto;margin-right:auto;background:linear-gradient(135deg,#0F172A 0%,#1e293b 100%);border-radius:var(--radius-xl);padding:5rem 3rem;text-align:center;color:white;position:relative;overflow:hidden}
+        .cta-section::before{content:'';position:absolute;top:-50%;left:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(44,181,200,0.2) 0%,transparent 70%);border-radius:50%}
+        .cta-section::after{content:'';position:absolute;bottom:-50%;right:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(220,200,148,0.15) 0%,transparent 70%);border-radius:50%}
+        .cta-content{max-width:700px;margin:0 auto;position:relative;z-index:1}
+        .cta-section h2{font-size:clamp(2.2rem,5vw,3.2rem);margin-bottom:1rem;color:white;line-height:1.1}
+        .cta-section h2 .accent{font-style:italic;color:var(--turquesa-light)}
+        .cta-section p{font-size:1.1rem;margin-bottom:2.5rem;color:rgba(255,255,255,0.75);line-height:1.7}
+        .cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+        .cta-btn{padding:1rem 2rem;border-radius:var(--radius-full);font-weight:600;transition:all 0.3s;font-family:'Manrope',sans-serif;display:inline-flex;align-items:center;gap:0.5rem}
+        .cta-btn-primary{background:var(--turquesa);color:white}
+        .cta-btn-primary:hover{background:var(--turquesa-light);transform:translateY(-3px);box-shadow:0 10px 30px rgba(44,181,200,0.4)}
+        .cta-btn-secondary{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);color:white;border:1px solid rgba(255,255,255,0.2)}
+        .cta-btn-secondary:hover{background:rgba(255,255,255,0.2);transform:translateY(-3px)}
+        .cta-btn svg{width:18px;height:18px}
+
+        /* FOOTER */
+        footer{background:#0A0F1C;color:rgba(255,255,255,0.6);padding:5rem 2rem 2rem}
+        .footer-content{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:3rem}
+        .footer-brand .logo{color:white;margin-bottom:1rem}
+        .footer-brand p{font-size:0.9rem;line-height:1.7;margin-bottom:1.5rem}
+        .social-links{display:flex;gap:0.75rem}
+        .social-link{width:40px;height:40px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);transition:all 0.3s}
+        .social-link:hover{background:var(--turquesa);color:white;border-color:var(--turquesa);transform:translateY(-3px)}
+        .social-link svg{width:16px;height:16px}
+        .footer-section h4{color:white;margin-bottom:1.5rem;font-size:1rem;font-family:'Manrope',sans-serif;font-weight:700}
+        .footer-section ul{list-style:none}
+        .footer-section ul li{margin-bottom:0.7rem}
+        .footer-section a{color:rgba(255,255,255,0.6);font-size:0.9rem;transition:all 0.3s;display:inline-flex;align-items:center;gap:0.3rem}
+        .footer-section a:hover{color:var(--turquesa-light);gap:0.5rem}
+        .newsletter-form{display:flex;gap:0.5rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-full);padding:0.4rem}
+        .newsletter-form input{flex:1;background:transparent;border:none;outline:none;color:white;padding:0.5rem 1rem;font-family:inherit;font-size:0.9rem}
+        .newsletter-form input::placeholder{color:rgba(255,255,255,0.4)}
+        .newsletter-form button{background:var(--turquesa);color:white;padding:0.6rem 1.2rem;border-radius:var(--radius-full);font-weight:600;font-size:0.85rem;transition:all 0.3s}
+        .newsletter-form button:hover{background:var(--turquesa-light)}
+        .footer-bottom{max-width:1400px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.08);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.85rem}
+        .footer-legal{display:flex;gap:1.5rem}
+
+        /* WHATSAPP */
+        .whatsapp-float{position:fixed;bottom:30px;right:30px;background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,0.4);z-index:999;transition:all 0.3s}
+        .whatsapp-float:hover{transform:scale(1.1) translateY(-3px);box-shadow:0 15px 40px rgba(37,211,102,0.5)}
+        .whatsapp-float::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:#25D366;opacity:0.3;animation:ripple 2s infinite;z-index:-1}
+        @keyframes ripple{0%{transform:scale(1);opacity:0.3}100%{transform:scale(1.5);opacity:0}}
+        .whatsapp-float svg{width:30px;height:30px}
+
+        /* MOBILE NAV */
+        .mobile-bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);box-shadow:0 -5px 30px rgba(0,0,0,0.08);padding:0.6rem 0;z-index:998}
+        .mobile-nav-items{display:flex;justify-content:space-around;max-width:500px;margin:0 auto}
+        .mobile-nav-item{display:flex;flex-direction:column;align-items:center;gap:0.25rem;color:var(--gray-500);font-size:0.7rem;font-weight:600;font-family:'Manrope',sans-serif;padding:0.5rem 1rem;transition:color 0.3s;text-transform:uppercase;letter-spacing:0.05em}
+        .mobile-nav-item svg{width:22px;height:22px}
+        .mobile-nav-item.active{color:var(--turquesa)}
+
+        /* REVEAL */
+        .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.4,0,0.2,1)}
+        .reveal.visible{opacity:1;transform:translateY(0)}
+
+        /* RESPONSIVE */
+        @media (max-width:1080px){
+            .contact-grid{grid-template-columns:1fr;gap:3rem}
+            .contact-info{position:static}
+            .response-card{grid-template-columns:1fr;gap:2.5rem;padding:3rem 2rem}
+        }
+        @media (max-width:992px){
+            .nav-menu{display:none}
+            .mobile-menu-btn{display:flex}
+            .footer-content{grid-template-columns:1fr 1fr;gap:2rem}
+        }
+        @media (max-width:768px){
+            .form-row{grid-template-columns:1fr}
+            .contact-form-wrap{padding:2rem 1.5rem}
+            .hero-contact{height:60vh;min-height:400px}
+            .hero-contact-content{margin-left:0;padding:0 1.5rem}
+            .contact-section{padding:3rem 1.5rem}
+            .faq-section{padding:3rem 1.5rem}
+            .response-section{padding:3rem 1.5rem}
+            .cta-section{padding:3rem 1.5rem;margin:3rem 1rem}
+            footer{padding:3rem 1.5rem 1.5rem}
+            .footer-content{grid-template-columns:1fr}
+            .footer-bottom{flex-direction:column;text-align:center}
+            .mobile-bottom-nav{display:block}
+            body{padding-bottom:80px}
+        }
+        @media (max-width:480px){
+            .hero-contact h1{font-size:2.3rem}
+            .hero-contact-subtitle{font-size:1rem}
+            .response-stats{grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-container">
+            <a href="/" class="logo" aria-label="MyExcursions">
+                <svg class="logo-svg" viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MyExcursions ME logo">
+                    <text x="0" y="88" font-family="'Playfair Display', Georgia, serif" font-size="110" font-weight="700" fill="#2CB5C8" letter-spacing="-2">M</text>
+                    <text x="80" y="72" font-family="'Playfair Display', Georgia, serif" font-size="75" font-weight="900" fill="#DCC894" letter-spacing="-2">E</text>
+                </svg>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Shore Excursions</a></li>
+                <li><a href="#">Private Tours</a></li>
+                <li><a href="#">Overland</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#" style="color:var(--turquesa)">Contact</a></li>
+            </ul>
+            <div class="header-actions">
+                <button class="icon-btn" aria-label="Search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                </button>
+                <button class="icon-btn" aria-label="Favorites">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                </button>
+                <button class="btn-primary">
+                    Plan My Trip
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO CONTACT -->
+    <section class="hero-contact">
+        <div class="hero-contact-bg">
+            <img src="https://image.qwenlm.ai/public_source/d00034be-7c69-41cd-b495-ef8115ed7c68/1aba93194-1419-4013-bfd5-2d0c108fe088.png" alt="Contact MyExcursions - Premium Travel Planning" loading="eager">
+        </div>
+        <div class="hero-contact-content">
+            <h1>Let's Plan Your <br><span class="accent">Next Adventure</span></h1>
+            <p class="hero-contact-subtitle">Whether you have a question, a quote request, or just want to share your travel dreams — we're here to listen. Reach out and a MyExcursions expert will respond within 24 hours.</p>
+        </div>
+    </section>
+
+    <!-- CONTACT GRID -->
+    <section class="contact-section">
+        <div class="contact-grid">
+            <!-- FORM -->
+            <div class="contact-form-wrap reveal">
+                <div class="section-label">Send a Message</div>
+                <h2>We'd Love to <span class="accent">Hear From You</span></h2>
+                <p>Fill out the form below and we'll get back to you as soon as possible. All fields marked with * are required.</p>
+                <form id="contactForm" onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group" style="margin-bottom:0">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                        </div>
+                        <div class="form-group" style="margin-bottom:0">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group" style="margin-bottom:0">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group" style="margin-bottom:0">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interested In</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service...</option>
+                            <option value="private-excursions">Private Excursions</option>
+                            <option value="pre-post">Pre & Post Cruise Programs</option>
+                            <option value="themed">Themed Tours</option>
+                            <option value="transfers">Transfers & VIP Airport</option>
+                            <option value="weddings">Weddings & Honeymoons</option>
+                            <option value="custom">Custom Program</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group" style="margin-bottom:0">
+                            <label for="destination">Destination</label>
+                            <input type="text" id="destination" name="destination" placeholder="e.g. Rome, Italy">
+                        </div>
+                        <div class="form-group" style="margin-bottom:0">
+                            <label for="travelDate">Travel Date</label>
+                            <input type="date" id="travelDate" name="travelDate">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your travel plans, group size, interests, and any special requests..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">
+                        Send Message
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                    <p class="form-note">By submitting this form, you agree to our Privacy Policy.</p>
+                </form>
+            </div>
+
+            <!-- INFO -->
+            <div class="contact-info reveal" style="--d:.15s">
+                <div class="section-label">Get in Touch</div>
+                <h2>Reach Us <span class="accent">Directly</span></h2>
+                <p>Prefer a more direct conversation? Reach out through any of the channels below — our team responds quickly, personally, and always with care.</p>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="cm-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div class="cm-content">
+                            <div class="cm-label">Email</div>
+                            <div class="cm-value"><a href="mailto:info@myexcursions.com">info@myexcursions.com</a></div>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="cm-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                        </div>
+                        <div class="cm-content">
+                            <div class="cm-label">Phone</div>
+                            <div class="cm-value"><a href="tel:+15551234567">+1 (555) 123-4567</a></div>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="cm-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+                        </div>
+                        <div class="cm-content">
+                            <div class="cm-label">WhatsApp</div>
+                            <div class="cm-value"><a href="https://wa.me/584142894116" target="_blank">+58 414 289 4116</a></div>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="cm-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="cm-content">
+                            <div class="cm-label">Office</div>
+                            <div class="cm-value">Available Worldwide<br>Remote Operations</div>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="cm-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <div class="cm-content">
+                            <div class="cm-label">Hours</div>
+                            <div class="cm-value">Mon – Sat: 9:00 AM – 7:00 PM<br>Sun: By appointment</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-contact">
+                    <h3>Need an Instant Reply?</h3>
+                    <p>For urgent inquiries or last-minute bookings, reach us directly on WhatsApp — we typically respond within minutes.</p>
+                    <div class="qc-buttons">
+                        <a href="https://wa.me/584142894116" target="_blank" class="qc-btn qc-btn-whatsapp">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+                            WhatsApp
+                        </a>
+                        <a href="tel:+15551234567" class="qc-btn qc-btn-phone">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                            Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESPONSE TIME -->
+    <section class="response-section">
+        <div class="response-card reveal">
+            <div class="response-content">
+                <div class="section-label">Our Promise</div>
+                <h2>Fast, Personal <span class="accent">Responses</span></h2>
+                <p>We know that when you're planning a trip, timing matters. That's why every inquiry is handled personally by our team — no bots, no automated replies. Just real humans who care about your journey.</p>
+            </div>
+            <div class="response-stats">
+                <div class="r-stat">
+                    <b>&lt;24h</b>
+                    <span>Email Response</span>
+                </div>
+                <div class="r-stat">
+                    <b>&lt;1h</b>
+                    <span>WhatsApp Reply</span>
+                </div>
+                <div class="r-stat">
+                    <b>100%</b>
+                    <span>Personal Touch</span>
+                </div>
+                <div class="r-stat">
+                    <b>30+</b>
+                    <span>Years Experience</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="faq-header reveal">
+                <div class="section-label" style="justify-content:center">FAQ</div>
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to the most common questions we receive from travelers.</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item reveal">
+                    <h4><span class="faq-num">01</span> How far in advance should I book?</h4>
+                    <p>We recommend booking at least 2–4 weeks in advance for most excursions. For peak season or custom programs, 6–8 weeks is ideal. Last-minute requests are welcome — we'll do our best to accommodate.</p>
+                </div>
+                <div class="faq-item reveal">
+                    <h4><span class="faq-num">02</span> Are your tours truly private?</h4>
+                    <p>Yes. Every program we arrange is exclusively for your party. No strangers, no shared vehicles, no group tours. Just you, your companions, and your personal guide or driver.</p>
+                </div>
+                <div class="faq-item reveal">
+                    <h4><span class="faq-num">03</span> What's included in the price?</h4>
+                    <p>Prices typically include your private vehicle, driver or guide, reserved tickets where applicable, and all taxes. Meals, gratuities, and personal expenses are not included unless specified.</p>
+                </div>
+                <div class="faq-item reveal">
+                    <h4><span class="faq-num">04</span> Can you accommodate large groups?</h4>
+                    <p>Absolutely. We work with couples, families, and groups of all sizes. For larger parties, we coordinate multiple vehicles and guides to ensure a seamless experience.</p>
+                </div>
+                <div class="faq-item reveal">
+                    <h4><span class="faq-num">05</span> What is your cancellation policy?</h4>
+                    <p>Cancellations made 14+ days before the service receive a full refund. Within 14 days, policies vary by service. We'll always provide clear terms before you confirm.</p>
+                </div>
+                <div class="faq-item reveal">
+                    <h4><span class="faq-num">06</span> Do you offer services at cruise ports?</h4>
+                    <p>Yes — shore excursions are our specialty. We operate at hundreds of ports worldwide and guarantee your timely return to the ship.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section reveal">
+        <div class="cta-content">
+            <div class="section-label" style="justify-content:center;color:var(--turquesa-light)">Ready to Travel?</div>
+            <h2>Start Your <span class="accent">Journey Today</span></h2>
+            <p>Whether it's a private catamaran, a shore excursion, a wine tasting, or a destination wedding — we make it happen. Our experts are ready to design a personalized journey just for you.</p>
+            <div class="cta-buttons">
+                <a href="#contactForm" class="cta-btn cta-btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    Send a Message
+                </a>
+                <a href="https://wa.me/584142894116" target="_blank" class="cta-btn cta-btn-secondary">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+                    WhatsApp Chat
+                </a>
+                <a href="tel:+15551234567" class="cta-btn cta-btn-secondary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                    Call Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="logo" aria-label="MyExcursions">
+                    <svg class="logo-svg" viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MyExcursions ME logo" style="height:44px;">
+                        <text x="0" y="88" font-family="'Playfair Display', Georgia, serif" font-size="110" font-weight="700" fill="#2CB5C8" letter-spacing="-2">M</text>
+                        <text x="80" y="72" font-family="'Playfair Display', Georgia, serif" font-size="75" font-weight="900" fill="#DCC894" letter-spacing="-2">E</text>
+                    </svg>
+                </a>
+                <p>Over 1,000 destinations and 3,000 private experiences. Tailored for couples, families, and discerning groups worldwide.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg></a>
+                    <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+                    <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#0A0F1C"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Explore</h4>
+                <ul><li><a href="#">Europe</a></li><li><a href="#">Americas</a></li><li><a href="#">Asia</a></li><li><a href="#">Africa</a></li><li><a href="#">Oceania</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul><li><a href="#">Shore Excursions</a></li><li><a href="#">Private Tours</a></li><li><a href="#">Overland Programs</a></li><li><a href="#">Destination Weddings</a></li><li><a href="#">Luxury Yachts</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>Stay Inspired</h4>
+                <p style="font-size:0.9rem;margin-bottom:1rem">Get exclusive travel guides and special offers directly in your inbox.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault();alert('Thanks for subscribing!')">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 MyExcursions. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/584142894116" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-bottom-nav">
+        <div class="mobile-nav-items">
+            <a href="#" class="mobile-nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a>
+            <a href="#" class="mobile-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>Search</a>
+            <a href="#" class="mobile-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Favorites</a>
+            <a href="#" class="mobile-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</a>
+        </div>
+    </nav>
+
+    <script>
+        // Scroll Reveal
+        const revealElements=document.querySelectorAll('.reveal');
+        const observer=new IntersectionObserver((entries)=>{
+            entries.forEach((entry)=>{
+                if(entry.isIntersecting){
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+        revealElements.forEach(el=>observer.observe(el));
+
+        // Form Submit
+        function handleSubmit(e){
+            e.preventDefault();
+            const btn=e.target.querySelector('.form-submit');
+            const originalHTML=btn.innerHTML;
+            btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px"><path d="M20 6L9 17l-5-5"/></svg> Message Sent!';
+            btn.style.background='var(--turquesa)';
+            setTimeout(()=>{
+                btn.innerHTML=originalHTML;
+                btn.style.background='';
+                e.target.reset();
+            },3000);
+        }
+
+        // Mobile menu
+        const mobileBtn=document.querySelector('.mobile-menu-btn');
+        const navMenu=document.querySelector('.nav-menu');
+        mobileBtn.addEventListener('click',()=>{
+            navMenu.classList.toggle('open');
+            navMenu.style.display=navMenu.classList.contains('open')?'flex':'none';
+            if(window.innerWidth<=768&&navMenu.classList.contains('open')){
+                navMenu.style.flexDirection='column';
+                navMenu.style.position='absolute';
+                navMenu.style.top='100%';
+                navMenu.style.left='0';
+                navMenu.style.width='100%';
+                navMenu.style.background='white';
+                navMenu.style.padding='2rem';
+                navMenu.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)';
+                navMenu.style.gap='1.5rem';
+                navMenu.style.zIndex='999';
+            }
+        });
+
+        // Mobile bottom nav
+        document.querySelectorAll('.mobile-nav-item').forEach(item=>{
+            item.addEventListener('click',(e)=>{
+                e.preventDefault();
+                document.querySelectorAll('.mobile-nav-item').forEach(i=>i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+
+        // Header scroll
+        window.addEventListener('scroll',()=>{
+            const header=document.querySelector('header');
+            const currentScroll=window.pageYOffset;
+            header.style.boxShadow=currentScroll>50?'0 2px 20px rgba(0,0,0,0.05)':'none';
+        });
+    </script>
+</body>
+</html>
+

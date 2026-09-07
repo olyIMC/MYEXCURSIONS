@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyExcursions | Premium Private Tours, Shore Excursions & Bespoke Travel</title>
+    <meta name="description" content="Over 1,000 destinations and 3,000 private programs. From Cinque Terre to Iguazu Falls, enjoy private shore excursions, catamaran cruises, wine tastings, overland programs, and destination weddings. Travel beyond expectations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --turquesa: #2CB5C8;
+            --turquesa-dark: #1a8b9e;
+            --turquesa-light: #4FD1E3;
+            --beige: #DCC894;
+            --beige-dark: #C9B47A;
+            --dark: #0F172A;
+            --gray-900: #1F2937;
+            --gray-700: #374151;
+            --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
+            --gray-200: #E5E7EB;
+            --gray-100: #F3F4F6;
+            --bg-light: #F8FAFC;
+            --white: #FFFFFF;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05);
+            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.08);
+            --shadow-xl: 0 20px 40px -10px rgba(0,0,0,0.15);
+            --shadow-hover: 0 25px 50px -12px rgba(44,181,200,0.25);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --radius-full: 100px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',system-ui,sans-serif;color:var(--gray-900);background:var(--white);line-height:1.6;overflow-x:hidden}
+        h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:-0.02em}
+        .section-label{font-family:'Manrope',sans-serif;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--turquesa);margin-bottom:0.75rem;display:inline-flex;align-items:center;gap:0.5rem}
+        .section-label::before{content:'';width:24px;height:2px;background:var(--turquesa);display:inline-block}
+        a{text-decoration:none;color:inherit}
+        button{cursor:pointer;font-family:inherit;border:none;outline:none}
+        img{max-width:100%;display:block}
+        .container{max-width:1400px;margin:0 auto;padding:0 2rem}
+
+        /* HEADER */
+        header{background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(0,0,0,0.04);padding:1rem 0;transition:all 0.3s}
+        .header-container{display:flex;align-items:center;justify-content:space-between}
+        .logo{display:flex;align-items:center;gap:0.5rem}
+        .logo img{height:50px;width:auto;display:block}
+        .nav-menu{display:flex;gap:2.25rem;list-style:none}
+        .nav-menu a{font-family:'Manrope',sans-serif;color:var(--gray-700);font-weight:500;font-size:0.95rem;position:relative;padding:0.5rem 0;transition:color 0.3s}
+        .nav-menu a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--turquesa);transition:width 0.3s}
+        .nav-menu a:hover{color:var(--turquesa)}
+        .nav-menu a:hover::after{width:100%}
+        .header-actions{display:flex;align-items:center;gap:1rem}
+        .icon-btn{width:40px;height:40px;background:var(--gray-100);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gray-700);transition:all 0.3s}
+        .icon-btn:hover{background:var(--turquesa);color:white;transform:translateY(-2px)}
+        .icon-btn svg{width:18px;height:18px}
+        .btn-primary{background:var(--dark);color:white;padding:0.75rem 1.75rem;border-radius:var(--radius-full);font-weight:600;font-size:0.9rem;font-family:'Manrope',sans-serif;transition:all 0.3s;display:inline-flex;align-items:center;gap:0.5rem}
+        .btn-primary:hover{background:var(--turquesa);transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+        .btn-primary svg{width:16px;height:16px}
+        .mobile-menu-btn{display:none;width:40px;height:40px;background:var(--gray-100);border-radius:50%;align-items:center;justify-content:center}
+        .mobile-menu-btn svg{width:20px;height:20px}
+
+        /* HERO */
+        .hero{position:relative;height:90vh;min-height:680px;overflow:hidden;display:flex;align-items:center}
+        .hero-bg{position:absolute;inset:0;z-index:0}
+        .hero-bg img{width:100%;height:100%;object-fit:cover;animation:zoomOut 20s ease-out forwards}
+        @keyframes zoomOut{from{transform:scale(1.1)}to{transform:scale(1)}}
+        .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,42,0.3) 0%,rgba(15,23,42,0.4) 50%,rgba(15,23,42,0.85) 100%);z-index:1}
+        .hero-content{position:relative;z-index:2;max-width:860px;color:white;padding:0 2rem;margin-left:8%}
+        .hero-tag{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);padding:0.5rem 1.1rem;border-radius:var(--radius-full);font-size:0.85rem;font-weight:500;margin-bottom:1.5rem;animation:fadeInUp 0.8s 0.2s both}
+        .hero-tag .dot{width:8px;height:8px;background:var(--turquesa-light);border-radius:50%;box-shadow:0 0 10px var(--turquesa-light);animation:pulse 2s infinite}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+        .hero h1{font-size:clamp(2.8rem,6vw,5.2rem);font-weight:700;line-height:1.05;margin-bottom:1.5rem;letter-spacing:-0.03em;animation:fadeInUp 0.8s 0.4s both}
+        .hero h1 .accent{font-style:italic;background:linear-gradient(120deg,var(--beige) 0%,var(--beige-dark) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+        .hero-subtitle{font-size:1.15rem;line-height:1.7;max-width:620px;color:rgba(255,255,255,0.85);margin-bottom:2.5rem;animation:fadeInUp 0.8s 0.6s both}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+        /* BUSCADOR SIMPLIFICADO */
+        .search-widget-simple {
+            background: white;
+            border-radius: var(--radius-full);
+            padding: 6px 6px 6px 24px;
+            display: flex;
+            align-items: center;
+            max-width: 550px;
+            margin: 0 auto;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+            animation: fadeInUp 0.8s 0.8s both;
+            gap: 0.5rem;
+        }
+        .search-widget-simple input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            padding: 0.8rem 0;
+            background: transparent;
+            color: var(--gray-900);
+            font-family: inherit;
+        }
+        .search-widget-simple input::placeholder {
+            color: var(--gray-400);
+        }
+        .search-widget-simple button {
+            background: var(--turquesa);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+            font-family: 'Manrope', sans-serif;
+        }
+        .search-widget-simple button:hover {
+            background: var(--turquesa-dark);
+            transform: scale(1.02);
+        }
+        .search-widget-simple button svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .hero-stats{display:flex;gap:3rem;margin-top:3rem;animation:fadeInUp 0.8s 1s both}
+        .hero-stat .num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:white;line-height:1}
+        .hero-stat .label{font-size:0.85rem;color:rgba(255,255,255,0.7);margin-top:0.3rem}
+        .scroll-indicator{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;color:white;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.2em;display:flex;flex-direction:column;align-items:center;gap:0.5rem;opacity:0.7}
+        .scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,white,transparent);animation:scrollPulse 2s infinite}
+        @keyframes scrollPulse{0%,100%{opacity:0.3}50%{opacity:1}}
+
+        /* INTRO */
+        .intro-section{padding:4rem 2rem 2rem;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:end;gap:2rem}
+        .intro-content h2{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin-bottom:1rem;color:var(--dark)}
+        .intro-content h2 .accent{font-style:italic;color:var(--turquesa)}
+        .intro-content p{color:var(--gray-500);font-size:1.05rem;max-width:600px}
+        .view-all{font-family:'Manrope',sans-serif;font-weight:600;color:var(--dark);display:inline-flex;align-items:center;gap:0.5rem;padding-bottom:0.5rem;border-bottom:2px solid var(--turquesa);transition:gap 0.3s}
+        .view-all:hover{gap:1rem}
+
+        /* CARDS */
+        .cards-grid{max-width:1400px;margin:0 auto;padding:2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.75rem}
+        .app-card{background:white;border-radius:var(--radius-xl);overflow:hidden;transition:all 0.5s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;position:relative;box-shadow:var(--shadow-sm);border:1px solid var(--gray-100)}
+        .app-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-xl);border-color:transparent}
+        .img-wrapper{position:relative;aspect-ratio:4/5;overflow:hidden}
+        .img-wrapper img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease}
+        .app-card:hover .img-wrapper img{transform:scale(1.08)}
+        .img-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(15,23,42,0.4) 100%)}
+        .card-badges{position:absolute;top:1rem;left:1rem;right:1rem;display:flex;justify-content:space-between;z-index:2}
+        .badge{background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);color:var(--dark);font-family:'Manrope',sans-serif;font-size:0.7rem;font-weight:700;padding:0.4rem 0.8rem;border-radius:var(--radius-full);text-transform:uppercase;letter-spacing:0.05em;display:inline-flex;align-items:center;gap:0.3rem}
+        .badge.featured{background:var(--beige);color:var(--dark)}
+        .badge.exclusive{background:var(--dark);color:white}
+        .fav-btn{width:38px;height:38px;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--gray-500);transition:all 0.3s}
+        .fav-btn:hover{transform:scale(1.1);color:#ef4444}
+        .fav-btn.active{color:#ef4444;background:white}
+        .card-location{position:absolute;bottom:1rem;left:1rem;color:white;font-family:'Manrope',sans-serif;font-size:0.85rem;font-weight:500;display:flex;align-items:center;gap:0.4rem;z-index:2;text-shadow:0 1px 3px rgba(0,0,0,0.3)}
+        .card-location svg{width:14px;height:14px}
+        .card-body{padding:1.5rem 1.5rem 1.75rem;flex:1;display:flex;flex-direction:column}
+        .card-title{font-size:1.25rem;font-weight:600;color:var(--dark);margin-bottom:0.5rem;line-height:1.3;font-family:'Playfair Display',serif}
+        .card-description{font-size:0.9rem;color:var(--gray-500);line-height:1.6;margin-bottom:1.25rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+        .card-meta{display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--gray-100)}
+        .rating{display:flex;align-items:center;gap:0.4rem;font-family:'Manrope',sans-serif}
+        .rating .stars{color:var(--beige-dark);font-size:0.9rem;letter-spacing:1px}
+        .rating .score{font-weight:700;color:var(--dark);font-size:0.9rem}
+        .rating .reviews{color:var(--gray-500);font-size:0.8rem}
+        .card-action{color:var(--turquesa);font-weight:600;font-size:0.85rem;font-family:'Manrope',sans-serif;display:inline-flex;align-items:center;gap:0.3rem;transition:gap 0.3s}
+        .app-card:hover .card-action{gap:0.6rem}
+        .card-action svg{width:14px;height:14px}
+
+        /* FEATURED */
+        .featured-section{max-width:1400px;margin:4rem auto;padding:0 2rem}
+        .featured-card{background:linear-gradient(135deg,var(--dark) 0%,#1e293b 100%);border-radius:var(--radius-xl);overflow:hidden;display:grid;grid-template-columns:1.2fr 1fr;min-height:480px;position:relative}
+        .featured-image{position:relative;overflow:hidden}
+        .featured-image img{width:100%;height:100%;object-fit:cover}
+        .featured-content{padding:3.5rem;color:white;display:flex;flex-direction:column;justify-content:center}
+        .featured-tag{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(220,200,148,0.15);border:1px solid rgba(220,200,148,0.3);color:var(--beige);padding:0.4rem 1rem;border-radius:var(--radius-full);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;width:fit-content;margin-bottom:1.5rem}
+        .featured-content h3{font-size:2.5rem;line-height:1.1;margin-bottom:1rem;color:white}
+        .featured-content p{color:rgba(255,255,255,0.7);font-size:1.05rem;line-height:1.7;margin-bottom:2rem}
+        .featured-features{display:flex;gap:2rem;margin-bottom:2rem;flex-wrap:wrap}
+        .feature-item{display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;color:rgba(255,255,255,0.85)}
+        .feature-item svg{width:18px;height:18px;color:var(--turquesa-light)}
+        .featured-btn{background:white;color:var(--dark);padding:1rem 2rem;border-radius:var(--radius-full);font-weight:700;font-family:'Manrope',sans-serif;width:fit-content;transition:all 0.3s;display:inline-flex;align-items:center;gap:0.5rem}
+        .featured-btn:hover{background:var(--turquesa);color:white;transform:translateY(-2px);box-shadow:0 10px 30px rgba(44,181,200,0.4)}
+
+        /* TRUST */
+        .trust-section{background:var(--bg-light);padding:5rem 2rem;margin-top:4rem;position:relative;overflow:hidden}
+        .trust-section::before{content:'';position:absolute;top:-50%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(44,181,200,0.05) 0%,transparent 70%);border-radius:50%}
+        .trust-container{max-width:1400px;margin:0 auto;position:relative;z-index:1}
+        .trust-header{text-align:center;margin-bottom:4rem}
+        .trust-header h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:1rem;color:var(--dark)}
+        .trust-header p{color:var(--gray-500);font-size:1.05rem;max-width:600px;margin:0 auto}
+        .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem}
+        .trust-item{background:white;padding:2.5rem 2rem;border-radius:var(--radius-xl);text-align:center;transition:all 0.4s;border:1px solid var(--gray-100)}
+        .trust-item:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:transparent}
+        .trust-icon{width:64px;height:64px;background:linear-gradient(135deg,rgba(44,181,200,0.1) 0%,rgba(44,181,200,0.05) 100%);border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;color:var(--turquesa)}
+        .trust-icon svg{width:32px;height:32px}
+        .trust-number{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--dark);line-height:1;margin-bottom:0.5rem}
+        .trust-label{color:var(--gray-500);font-weight:500;font-size:0.95rem}
+
+        /* TESTIMONIALS */
+        .testimonials-section{padding:5rem 2rem;max-width:1400px;margin:0 auto}
+        .testimonials-header{text-align:center;margin-bottom:3rem}
+        .testimonials-header h2{font-size:clamp(2rem,4vw,2.8rem);color:var(--dark);margin-bottom:1rem}
+        .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+        .testimonial-card{background:white;border:1px solid var(--gray-100);border-radius:var(--radius-xl);padding:2rem;transition:all 0.4s;position:relative}
+        .testimonial-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:transparent}
+        .quote-mark{font-family:'Playfair Display',serif;font-size:4rem;color:var(--turquesa);opacity:0.2;line-height:1;position:absolute;top:1rem;right:1.5rem}
+        .testimonial-stars{color:var(--beige-dark);margin-bottom:1rem;font-size:1rem;letter-spacing:2px}
+        .testimonial-text{color:var(--gray-700);line-height:1.7;margin-bottom:1.5rem;font-size:0.95rem}
+        .testimonial-author{display:flex;align-items:center;gap:0.75rem;padding-top:1.5rem;border-top:1px solid var(--gray-100)}
+        .author-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--turquesa) 0%,var(--turquesa-dark) 100%);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:1rem}
+        .author-info .name{font-weight:600;color:var(--dark);font-size:0.95rem}
+        .author-info .trip{color:var(--gray-500);font-size:0.8rem}
+
+        /* REGIONS */
+        .regions-section{max-width:1400px;margin:4rem auto;padding:0 2rem}
+        .regions-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem}
+        .regions-header h2{font-size:clamp(2rem,4vw,2.8rem);color:var(--dark);margin-bottom:0.5rem}
+        .regions-header p{color:var(--gray-500);font-size:1rem}
+        .regions-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px 280px;gap:1.25rem}
+        .region-card{position:relative;border-radius:var(--radius-xl);overflow:hidden;cursor:pointer}
+        .region-card:first-child{grid-row:span 2}
+        .region-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s cubic-bezier(0.4,0,0.2,1)}
+        .region-card:hover img{transform:scale(1.08)}
+        .region-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,42,0) 40%,rgba(15,23,42,0.85) 100%);padding:1.75rem;color:white;display:flex;flex-direction:column;justify-content:flex-end;transition:all 0.4s}
+        .region-card:hover .region-overlay{background:linear-gradient(180deg,rgba(15,23,42,0) 20%,rgba(15,23,42,0.9) 100%)}
+        .region-count{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--beige);margin-bottom:0.3rem}
+        .region-card h3{font-size:1.8rem;margin-bottom:0.3rem;color:white}
+        .region-card p{opacity:0.85;font-size:0.9rem}
+        .region-arrow{position:absolute;top:1.25rem;right:1.25rem;width:40px;height:40px;background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;transition:all 0.3s}
+        .region-card:hover .region-arrow{background:white;color:var(--dark);transform:rotate(-45deg)}
+        .region-arrow svg{width:18px;height:18px}
+
+        /* CTA */
+        .cta-section{margin:5rem 2rem;max-width:1400px;margin-left:auto;margin-right:auto;background:linear-gradient(135deg,#0F172A 0%,#1e293b 100%);border-radius:var(--radius-xl);padding:5rem 3rem;text-align:center;color:white;position:relative;overflow:hidden}
+        .cta-section::before{content:'';position:absolute;top:-50%;left:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(44,181,200,0.2) 0%,transparent 70%);border-radius:50%}
+        .cta-section::after{content:'';position:absolute;bottom:-50%;right:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(220,200,148,0.15) 0%,transparent 70%);border-radius:50%}
+        .cta-content{max-width:700px;margin:0 auto;position:relative;z-index:1}
+        .cta-section h2{font-size:clamp(2.2rem,5vw,3.2rem);margin-bottom:1rem;color:white;line-height:1.1}
+        .cta-section h2 .accent{font-style:italic;color:var(--turquesa-light)}
+        .cta-section p{font-size:1.1rem;margin-bottom:2.5rem;color:rgba(255,255,255,0.75);line-height:1.7}
+        .cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+        .cta-btn{padding:1rem 2rem;border-radius:var(--radius-full);font-weight:600;transition:all 0.3s;font-family:'Manrope',sans-serif;display:inline-flex;align-items:center;gap:0.5rem}
+        .cta-btn-primary{background:var(--turquesa);color:white}
+        .cta-btn-primary:hover{background:var(--turquesa-light);transform:translateY(-3px);box-shadow:0 10px 30px rgba(44,181,200,0.4)}
+        .cta-btn-secondary{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);color:white;border:1px solid rgba(255,255,255,0.2)}
+        .cta-btn-secondary:hover{background:rgba(255,255,255,0.2);transform:translateY(-3px)}
+        .cta-btn svg{width:18px;height:18px}
+
+        /* FOOTER */
+        footer{background:#0A0F1C;color:rgba(255,255,255,0.6);padding:5rem 2rem 2rem}
+        .footer-content{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:3rem}
+        .footer-brand .logo{color:white;margin-bottom:1rem}
+        .footer-brand p{font-size:0.9rem;line-height:1.7;margin-bottom:1.5rem}
+        .social-links{display:flex;gap:0.75rem}
+        .social-link{width:40px;height:40px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);transition:all 0.3s}
+        .social-link:hover{background:var(--turquesa);color:white;border-color:var(--turquesa);transform:translateY(-3px)}
+        .social-link svg{width:16px;height:16px}
+        .footer-section h4{color:white;margin-bottom:1.5rem;font-size:1rem;font-family:'Manrope',sans-serif;font-weight:700}
+        .footer-section ul{list-style:none}
+        .footer-section ul li{margin-bottom:0.7rem}
+        .footer-section a{color:rgba(255,255,255,0.6);font-size:0.9rem;transition:all 0.3s;display:inline-flex;align-items:center;gap:0.3rem}
+        .footer-section a:hover{color:var(--turquesa-light);gap:0.5rem}
+        .newsletter-form{display:flex;gap:0.5rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-full);padding:0.4rem}
+        .newsletter-form input{flex:1;background:transparent;border:none;outline:none;color:white;padding:0.5rem 1rem;font-family:inherit;font-size:0.9rem}
+        .newsletter-form input::placeholder{color:rgba(255,255,255,0.4)}
+        .newsletter-form button{background:var(--turquesa);color:white;padding:0.6rem 1.2rem;border-radius:var(--radius-full);font-weight:600;font-size:0.85rem;transition:all 0.3s}
+        .newsletter-form button:hover{background:var(--turquesa-light)}
+        .footer-bottom{max-width:1400px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.08);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.85rem}
+        .footer-legal{display:flex;gap:1.5rem}
+
+        /* WHATSAPP */
+        .whatsapp-float{position:fixed;bottom:30px;right:30px;background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,0.4);z-index:999;transition:all 0.3s}
+        .whatsapp-float:hover{transform:scale(1.1) translateY(-3px);box-shadow:0 15px 40px rgba(37,211,102,0.5)}
+        .whatsapp-float::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:#25D366;opacity:0.3;animation:ripple 2s infinite;z-index:-1}
+        @keyframes ripple{0%{transform:scale(1);opacity:0.3}100%{transform:scale(1.5);opacity:0}}
+        .whatsapp-float svg{width:30px;height:30px}
+
+        /* MOBILE NAV */
+        .mobile-bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);box-shadow:0 -5px 30px rgba(0,0,0,0.08);padding:0.6rem 0;z-index:998}
+        .mobile-nav-items{display:flex;justify-content:space-around;max-width:500px;margin:0 auto}
+        .mobile-nav-item{display:flex;flex-direction:column;align-items:center;gap:0.25rem;color:var(--gray-500);font-size:0.7rem;font-weight:600;font-family:'Manrope',sans-serif;padding:0.5rem 1rem;transition:color 0.3s;text-transform:uppercase;letter-spacing:0.05em}
+        .mobile-nav-item svg{width:22px;height:22px}
+        .mobile-nav-item.active{color:var(--turquesa)}
+
+        /* REVEAL */
+        .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.4,0,0.2,1)}
+        .reveal.visible{opacity:1;transform:translateY(0)}
+
+        /* RESPONSIVE */
+        @media (max-width:1024px){
+            .featured-card{grid-template-columns:1fr}
+            .featured-image{height:320px}
+            .featured-content{padding:2.5rem}
+            .regions-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
+            .region-card:first-child{grid-row:span 1}
+            .region-card{height:260px}
+            .footer-content{grid-template-columns:1fr 1fr;gap:2rem}
+        }
+        @media (max-width:768px){
+            .nav-menu{display:none}
+            .mobile-menu-btn{display:flex}
+            .btn-primary{padding:0.6rem 1.2rem;font-size:0.85rem}
+            .hero{height:80vh;min-height:600px}
+            .hero-content{margin-left:0;padding:0 1.5rem}
+            .search-widget-simple{flex-direction:row;padding:6px 6px 6px 16px;max-width:100%;border-radius:var(--radius-full)}
+            .search-widget-simple input{padding:0.6rem 0;font-size:0.95rem}
+            .search-widget-simple button{padding:0.6rem 1.2rem;font-size:0.85rem}
+            .hero-stats{gap:1.5rem;flex-wrap:wrap}
+            .intro-section{grid-template-columns:1fr;text-align:center}
+            .intro-content p{margin:0 auto}
+            .cards-grid{grid-template-columns:1fr;padding:1.5rem;gap:1.25rem}
+            .featured-section{padding:0 1.5rem}
+            .featured-content{padding:2rem}
+            .featured-content h3{font-size:1.8rem}
+            .trust-section{padding:3rem 1.5rem}
+            .testimonials-section{padding:3rem 1.5rem}
+            .regions-section{padding:0 1.5rem}
+            .regions-grid{grid-template-columns:1fr}
+            .regions-header{flex-direction:column;gap:1rem;align-items:flex-start}
+            .cta-section{padding:3rem 1.5rem;margin:3rem 1rem}
+            footer{padding:3rem 1.5rem 1.5rem}
+            .footer-content{grid-template-columns:1fr}
+            .footer-bottom{flex-direction:column;text-align:center}
+            .mobile-bottom-nav{display:block}
+            body{padding-bottom:80px}
+        }
+        @media (max-width:480px){
+            .hero h1{font-size:2.3rem}
+            .hero-subtitle{font-size:1rem}
+            .hero-stats{gap:1rem}
+            .hero-stat .num{font-size:1.6rem}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-container">
+            <!-- LOGO CON RUTA LOCAL -->
+            <a href="/" class="logo">
+                <img src="file:///C:/Users/descarga/Desktop/ME-Logo-2.jpg" alt="MyExcursions Logo">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Shore Excursions</a></li>
+                <li><a href="#">Private Tours</a></li>
+                <li><a href="#">Overland</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <div class="header-actions">
+                <button class="icon-btn" aria-label="Search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                </button>
+                <button class="icon-btn" aria-label="Favorites">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                </button>
+                <button class="btn-primary">
+                    Plan My Trip
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1600" alt="Luxury travel" loading="eager">
+        </div>
+        <div class="hero-content">
+            <div class="hero-tag">
+                <span class="dot"></span>
+                <span>Premium Private Tours Worldwide</span>
+            </div>
+            <h1>Travel Beyond <br><span class="accent">Expectations</span></h1>
+            <p class="hero-subtitle">With over 1,000 destinations and 3,000 private programs, we offer custom experiences whether on land or from a cruise. From private catamarans to destination weddings — your journey starts here.</p>
+
+            <!-- BUSCADOR SIMPLIFICADO -->
+            <div class="search-widget-simple">
+                <input type="text" placeholder="Search destinations, tours, or experiences...">
+                <button>
+                    Search
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat"><div class="num">1K+</div><div class="label">Destinations</div></div>
+                <div class="hero-stat"><div class="num">3K+</div><div class="label">Private Programs</div></div>
+                <div class="hero-stat"><div class="num">15K+</div><div class="label">Happy Travelers</div></div>
+                <div class="hero-stat"><div class="num">4.9</div><div class="label">Average Rating</div></div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro-section reveal">
+        <div class="intro-content">
+            <div class="section-label">Curated Collection</div>
+            <h2>Explore the World's <span class="accent">Finest</span> Experiences</h2>
+            <p>From Cinque Terre to Iguazu Falls, indulge in private tours, exclusive shore excursions, and bespoke overland programs designed for couples, families, and discerning groups.</p>
+        </div>
+        <a href="#" class="view-all">View All Experiences
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </section>
+
+    <!-- CARDS -->
+    <section class="cards-grid">
+        <div class="app-card reveal">
+            <div class="img-wrapper">
+                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800" alt="Cinque Terre" loading="lazy">
+                <div class="img-overlay"></div>
+                <div class="card-badges">
+                    <span class="badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Best Seller</span>
+                    <button class="fav-btn" aria-label="Favorites">♡</button>
+                </div>
+                <div class="card-location">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Cinque Terre, Italy
+                </div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Private Coastal Hiking & Village Exploration</h3>
+                <p class="card-description">Walk along the famous coastal trails with a private guide. Enjoy authentic Ligurian cuisine, breathtaking Mediterranean views, and discover the colorful villages of the Italian Riviera.</p>
+                <div class="card-meta">
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="score">4.9</span>
+                        <span class="reviews">(127)</span>
+                    </div>
+                    <a href="#" class="card-action">View Details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-card reveal">
+            <div class="img-wrapper">
+                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800" alt="Santorini" loading="lazy">
+                <div class="img-overlay"></div>
+                <div class="card-badges">
+                    <span class="badge featured"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Featured</span>
+                    <button class="fav-btn" aria-label="Favorites">♡</button>
+                </div>
+                <div class="card-location">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Santorini, Greece
+                </div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Private Catamaran Sunset Cruise & Dinner</h3>
+                <p class="card-description">Relax aboard a private catamaran sailing around the caldera. Watch the world-famous sunset over the Aegean Sea with a gourmet dinner on board and swimming in crystal-clear waters.</p>
+                <div class="card-meta">
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="score">5.0</span>
+                        <span class="reviews">(89)</span>
+                    </div>
+                    <a href="#" class="card-action">View Details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-card reveal">
+            <div class="img-wrapper">
+                <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800" alt="Iguazu Falls" loading="lazy">
+                <div class="img-overlay"></div>
+                <div class="card-badges">
+                    <span class="badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Top Rated</span>
+                    <button class="fav-btn" aria-label="Favorites">♡</button>
+                </div>
+                <div class="card-location">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Iguazu Falls, Argentina
+                </div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Private Overland Program to Iguazu Falls</h3>
+                <p class="card-description">Witness one of the world's most spectacular natural wonders with expert guides. Our private overland program includes jungle trails and thrilling boat rides to the base of the falls.</p>
+                <div class="card-meta">
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="score">4.9</span>
+                        <span class="reviews">(203)</span>
+                    </div>
+                    <a href="#" class="card-action">View Details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-card reveal">
+            <div class="img-wrapper">
+                <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800" alt="Beijing" loading="lazy">
+                <div class="img-overlay"></div>
+                <div class="card-badges">
+                    <span class="badge exclusive"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Exclusive</span>
+                    <button class="fav-btn" aria-label="Favorites">♡</button>
+                </div>
+                <div class="card-location">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Beijing, China
+                </div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Private Temple & Palace Walking Tour</h3>
+                <p class="card-description">Walk among the ancient temples and palaces of Beijing. Explore the Forbidden City, the Temple of Heaven, and the Summer Palace with a private historian guide through imperial China.</p>
+                <div class="card-meta">
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="score">4.8</span>
+                        <span class="reviews">(156)</span>
+                    </div>
+                    <a href="#" class="card-action">View Details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-card reveal">
+            <div class="img-wrapper">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800" alt="Buenos Aires" loading="lazy">
+                <div class="img-overlay"></div>
+                <div class="card-badges">
+                    <span class="badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Romantic</span>
+                    <button class="fav-btn" aria-label="Favorites">♡</button>
+                </div>
+                <div class="card-location">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Buenos Aires, Argentina
+                </div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Private Tango Show & Argentine Dinner</h3>
+                <p class="card-description">Indulge your senses in the passion of Argentine tango. Enjoy a private dinner at a historic venue, followed by an authentic tango performance. A perfect evening for couples.</p>
+                <div class="card-meta">
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="score">4.9</span>
+                        <span class="reviews">(94)</span>
+                    </div>
+                    <a href="#" class="card-action">View Details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-card reveal">
+            <div class="img-wrapper">
+                <img src="https://images.unsplash.com/photo-1555881400-74d7c5d9f58a?w=800" alt="Lisbon" loading="lazy">
+                <div class="img-overlay"></div>
+                <div class="card-badges">
+                    <span class="badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Cultural</span>
+                    <button class="fav-btn" aria-label="Favorites">♡</button>
+                </div>
+                <div class="card-location">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Lisbon, Portugal
+                </div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Private Fado Show & Wine Tasting Experience</h3>
+                <p class="card-description">Immerse yourself in the soulful melodies of Portuguese Fado. Enjoy a private dinner accompanied by a live Fado performance, paired with a selection of Portugal's finest wines.</p>
+                <div class="card-meta">
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="score">4.8</span>
+                        <span class="reviews">(78)</span>
+                    </div>
+                    <a href="#" class="card-action">View Details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section class="featured-section reveal">
+        <div class="featured-card">
+            <div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200" alt="Luxury yacht" loading="lazy">
+            </div>
+            <div class="featured-content">
+                <span class="featured-tag">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    Experience of the Month
+                </span>
+                <h3>Mediterranean Private Yacht Journey</h3>
+                <p>Sail through the most exclusive coves of the Mediterranean aboard a luxury yacht with private chef, butler, and tailored itinerary designed just for you.</p>
+                <div class="featured-features">
+                    <div class="feature-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        <span>7 Days</span>
+                    </div>
+                    <div class="feature-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                        <span>Up to 8 guests</span>
+                    </div>
+                    <div class="feature-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>5 Destinations</span>
+                    </div>
+                </div>
+                <a href="#" class="featured-btn">Discover This Experience
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="trust-section">
+        <div class="trust-container">
+            <div class="trust-header reveal">
+                <div class="section-label" style="justify-content:center">Why Choose Us</div>
+                <h2>Crafted for Discerning Travelers</h2>
+                <p>Every detail is thoughtfully designed to create unforgettable memories, backed by our commitment to excellence.</p>
+            </div>
+            <div class="trust-grid">
+                <div class="trust-item reveal">
+                    <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+                    <div class="trust-number">1,000+</div>
+                    <div class="trust-label">Destinations Worldwide</div>
+                </div>
+                <div class="trust-item reveal">
+                    <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+                    <div class="trust-number">3,000+</div>
+                    <div class="trust-label">Private Programs</div>
+                </div>
+                <div class="trust-item reveal">
+                    <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div>
+                    <div class="trust-number">100%</div>
+                    <div class="trust-label">Customizable Experiences</div>
+                </div>
+                <div class="trust-item reveal">
+                    <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2zM12 6v6l4 2"/></svg></div>
+                    <div class="trust-number">24/7</div>
+                    <div class="trust-label">Concierge Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+        <div class="testimonials-header reveal">
+            <div class="section-label" style="justify-content:center">Traveler Stories</div>
+            <h2>What Our Guests Say</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal">
+                <div class="quote-mark">"</div>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"An absolutely magical experience in Santorini. The private catamaran cruise was beyond our expectations. Every detail was perfect."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SC</div>
+                    <div class="author-info">
+                        <div class="name">Sarah & Carlos</div>
+                        <div class="trip">Santorini Catamaran • Honeymoon</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="quote-mark">"</div>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"The Iguazu Falls program was unforgettable. Our guide was incredibly knowledgeable, and the private access made all the difference."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MR</div>
+                    <div class="author-info">
+                        <div class="name">Marcus Reynolds</div>
+                        <div class="trip">Iguazu Falls Overland • Family</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="quote-mark">"</div>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"From planning to execution, MyExcursions exceeded every expectation. Our Cinque Terre hiking trip was tailored perfectly for our small group."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">ET</div>
+                    <div class="author-info">
+                        <div class="name">Emma Thompson</div>
+                        <div class="trip">Cinque Terre Private Tour • Friends</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGIONS -->
+    <section class="regions-section">
+        <div class="regions-header reveal">
+            <div>
+                <div class="section-label">Explore the World</div>
+                <h2>Discover by Region</h2>
+                <p>From Europe to Asia, find your perfect shore excursion or overland adventure.</p>
+            </div>
+            <a href="#" class="view-all">All Regions<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="regions-grid">
+            <div class="region-card reveal">
+                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1200" alt="Europe" loading="lazy">
+                <div class="region-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                <div class="region-overlay">
+                    <div class="region-count">240+ experiences</div>
+                    <h3>Europe</h3>
+                    <p>Italy, Greece, Portugal, France, UK</p>
+                </div>
+            </div>
+            <div class="region-card reveal">
+                <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=800" alt="Asia" loading="lazy">
+                <div class="region-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                <div class="region-overlay">
+                    <div class="region-count">180+ experiences</div>
+                    <h3>Asia</h3>
+                    <p>China, Thailand, Japan</p>
+                </div>
+            </div>
+            <div class="region-card reveal">
+                <img src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=800" alt="Americas" loading="lazy">
+                <div class="region-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                <div class="region-overlay">
+                    <div class="region-count">220+ experiences</div>
+                    <h3>Americas</h3>
+                    <p>Argentina, USA, Brazil</p>
+                </div>
+            </div>
+            <div class="region-card reveal">
+                <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800" alt="Africa" loading="lazy">
+                <div class="region-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                <div class="region-overlay">
+                    <div class="region-count">120+ experiences</div>
+                    <h3>Africa</h3>
+                    <p>South Africa, Morocco</p>
+                </div>
+            </div>
+            <div class="region-card reveal">
+                <img src="https://images.unsplash.com/photo-1589308454676-22c01b9b5d43?w=800" alt="Oceania" loading="lazy">
+                <div class="region-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                <div class="region-overlay">
+                    <div class="region-count">90+ experiences</div>
+                    <h3>Oceania</h3>
+                    <p>Australia, New Zealand</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section reveal">
+        <div class="cta-content">
+            <div class="section-label" style="justify-content:center;color:var(--turquesa-light)">Start Your Journey</div>
+            <h2>Craft Your Own <span class="accent">Adventure</span></h2>
+            <p>Whether it's a private catamaran, a shore excursion, a wine tasting, or a destination wedding — we make it happen. Our experts are ready to design a personalized journey just for you.</p>
+            <div class="cta-buttons">
+                <a href="#" class="cta-btn cta-btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                    Call Our Manager
+                </a>
+                <a href="#" class="cta-btn cta-btn-secondary">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+                    WhatsApp Chat
+                </a>
+                <a href="#" class="cta-btn cta-btn-secondary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    Request Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <!-- LOGO EN EL FOOTER CON RUTA LOCAL -->
+                <a href="/" class="logo"><img src="file:///C:/Users/descarga/Desktop/ME-Logo-2.jpg" alt="MyExcursions Logo" style="height:40px;"></a>
+                <p>Over 1,000 destinations and 3,000 private experiences. Tailored for couples, families, and discerning groups worldwide.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg></a>
+                    <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+                    <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#0A0F1C"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Explore</h4>
+                <ul><li><a href="#">Europe</a></li><li><a href="#">Americas</a></li><li><a href="#">Asia</a></li><li><a href="#">Africa</a></li><li><a href="#">Oceania</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul><li><a href="#">Shore Excursions</a></li><li><a href="#">Private Tours</a></li><li><a href="#">Overland Programs</a></li><li><a href="#">Destination Weddings</a></li><li><a href="#">Luxury Yachts</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>Stay Inspired</h4>
+                <p style="font-size:0.9rem;margin-bottom:1rem">Get exclusive travel guides and special offers directly in your inbox.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault();alert('Thanks for subscribing!')">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 MyExcursions. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/584142894116" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-bottom-nav">
+        <div class="mobile-nav-items">
+            <a href="#" class="mobile-nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a>
+            <a href="#" class="mobile-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>Search</a>
+            <a href="#" class="mobile-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Favorites</a>
+            <a href="#" class="mobile-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</a>
+        </div>
+    </nav>
+
+    <script>
+        // Scroll Reveal
+        const revealElements=document.querySelectorAll('.reveal');
+        const observer=new IntersectionObserver((entries)=>{
+            entries.forEach((entry,index)=>{
+                if(entry.isIntersecting){
+                    setTimeout(()=>entry.target.classList.add('visible'),index*50);
+                    observer.unobserve(entry.target);
+                }
+            });
+        },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+        revealElements.forEach(el=>observer.observe(el));
+
+        // Favorites
+        document.querySelectorAll('.fav-btn').forEach(btn=>{
+            btn.addEventListener('click',(e)=>{
+                e.stopPropagation();
+                btn.classList.toggle('active');
+                btn.textContent=btn.classList.contains('active')?'♥':'♡';
+            });
+        });
+
+        // Mobile menu
+        const mobileBtn=document.querySelector('.mobile-menu-btn');
+        const navMenu=document.querySelector('.nav-menu');
+        mobileBtn.addEventListener('click',()=>{
+            navMenu.classList.toggle('open');
+            navMenu.style.display=navMenu.classList.contains('open')?'flex':'none';
+            if(window.innerWidth<=768&&navMenu.classList.contains('open')){
+                navMenu.style.flexDirection='column';
+                navMenu.style.position='absolute';
+                navMenu.style.top='100%';
+                navMenu.style.left='0';
+                navMenu.style.width='100%';
+                navMenu.style.background='white';
+                navMenu.style.padding='2rem';
+                navMenu.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)';
+                navMenu.style.gap='1.5rem';
+                navMenu.style.zIndex='999';
+            }
+        });
+
+        // Mobile bottom nav
+        document.querySelectorAll('.mobile-nav-item').forEach(item=>{
+            item.addEventListener('click',(e)=>{
+                e.preventDefault();
+                document.querySelectorAll('.mobile-nav-item').forEach(i=>i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+
+        // Header scroll
+        window.addEventListener('scroll',()=>{
+            const header=document.querySelector('header');
+            const currentScroll=window.pageYOffset;
+            header.style.boxShadow=currentScroll>50?'0 2px 20px rgba(0,0,0,0.05)':'none';
+        });
+    </script>
+</body>
+</html>
