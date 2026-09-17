@@ -45,7 +45,6 @@
         img{max-width:100%;display:block}
         .container{max-width:1400px;margin:0 auto;padding:0 2rem}
 
-        /* LOGO SVG */
         .logo-svg{height:52px;width:auto;display:block}
 
         /* HEADER */
@@ -82,53 +81,12 @@
         .hero-subtitle{font-size:1.15rem;line-height:1.7;max-width:620px;color:rgba(255,255,255,0.85);margin-bottom:2.5rem;animation:fadeInUp 0.8s 0.6s both}
         @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
-        .search-widget-simple {
-            background: white;
-            border-radius: var(--radius-full);
-            padding: 6px 6px 6px 24px;
-            display: flex;
-            align-items: center;
-            max-width: 550px;
-            margin: 0 auto;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
-            animation: fadeInUp 0.8s 0.8s both;
-            gap: 0.5rem;
-        }
-        .search-widget-simple input {
-            flex: 1;
-            border: none;
-            outline: none;
-            font-size: 1rem;
-            padding: 0.8rem 0;
-            background: transparent;
-            color: var(--gray-900);
-            font-family: inherit;
-        }
-        .search-widget-simple input::placeholder {
-            color: var(--gray-400);
-        }
-        .search-widget-simple button {
-            background: var(--turquesa);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: var(--radius-full);
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            white-space: nowrap;
-            font-family: 'Manrope', sans-serif;
-        }
-        .search-widget-simple button:hover {
-            background: var(--turquesa-dark);
-            transform: scale(1.02);
-        }
-        .search-widget-simple button svg {
-            width: 18px;
-            height: 18px;
-        }
+        .search-widget-simple{background:white;border-radius:var(--radius-full);padding:6px 6px 6px 24px;display:flex;align-items:center;max-width:550px;margin:0 auto;box-shadow:0 25px 60px rgba(0,0,0,0.25);animation:fadeInUp 0.8s 0.8s both;gap:0.5rem}
+        .search-widget-simple input{flex:1;border:none;outline:none;font-size:1rem;padding:0.8rem 0;background:transparent;color:var(--gray-900);font-family:inherit}
+        .search-widget-simple input::placeholder{color:var(--gray-400)}
+        .search-widget-simple button{background:var(--turquesa);color:white;padding:0.8rem 2rem;border-radius:var(--radius-full);font-weight:700;font-size:0.95rem;transition:all 0.3s;display:flex;align-items:center;gap:0.5rem;white-space:nowrap;font-family:'Manrope',sans-serif}
+        .search-widget-simple button:hover{background:var(--turquesa-dark);transform:scale(1.02)}
+        .search-widget-simple button svg{width:18px;height:18px}
 
         .hero-stats{display:flex;gap:3rem;margin-top:3rem;animation:fadeInUp 0.8s 1s both}
         .hero-stat .num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:white;line-height:1}
@@ -149,7 +107,7 @@
         .cards-grid{max-width:1400px;margin:0 auto;padding:2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.75rem}
         .app-card{background:white;border-radius:var(--radius-xl);overflow:hidden;transition:all 0.5s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;position:relative;box-shadow:var(--shadow-sm);border:1px solid var(--gray-100)}
         .app-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-xl);border-color:transparent}
-        .img-wrapper{position:relative;aspect-ratio:4/5;overflow:hidden}
+        .img-wrapper{position:relative;aspect-ratio:16/10;overflow:hidden}
         .img-wrapper img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease}
         .app-card:hover .img-wrapper img{transform:scale(1.08)}
         .img-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(15,23,42,0.4) 100%)}
@@ -174,15 +132,17 @@
         .app-card:hover .card-action{gap:0.6rem}
         .card-action svg{width:14px;height:14px}
 
-        /* SIGNATURE JOURNEYS (Exoticca Partner Packages) */
+        /* SIGNATURE JOURNEYS */
         .signature-section{max-width:1400px;margin:4rem auto;padding:0 2rem}
         .signature-header{text-align:center;margin-bottom:3rem}
         .signature-header .section-label{justify-content:center}
         .signature-header .section-label::before{display:none}
         .signature-header h2{font-size:clamp(2rem,4vw,2.8rem);color:var(--dark);margin-bottom:1rem}
-        .signature-header p{color:var(--gray-500);font-size:1.02rem;max-width:640px;margin:0 auto}
+        .signature-header p{color:var(--gray-500);font-size:1.02rem;max-width:680px;margin:0 auto}
         .signature-partner-badge{display:inline-flex;align-items:center;gap:0.5rem;background:var(--bg-light);border:1px solid var(--gray-200);padding:0.4rem 0.9rem;border-radius:var(--radius-full);font-family:'Manrope',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-700);margin-top:1.25rem}
         .signature-partner-badge svg{width:14px;height:14px;color:var(--turquesa)}
+        .signature-note{display:flex;align-items:flex-start;gap:0.6rem;background:rgba(220,200,148,0.15);border:1px solid rgba(220,200,148,0.4);border-radius:var(--radius-md);padding:0.9rem 1.1rem;font-size:0.85rem;color:var(--gray-700);line-height:1.6;max-width:780px;margin:1.5rem auto 0;text-align:left}
+        .signature-note svg{width:18px;height:18px;color:var(--beige-dark);flex:none;margin-top:0.15rem}
         .signature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.75rem}
         .signature-card{background:white;border-radius:var(--radius-xl);overflow:hidden;transition:all 0.5s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;border:1px solid var(--gray-100);box-shadow:var(--shadow-sm);position:relative}
         .signature-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-xl);border-color:transparent}
@@ -194,6 +154,7 @@
         .signature-duration svg{width:11px;height:11px}
         .signature-region{position:absolute;bottom:1rem;left:1rem;z-index:2;color:white;font-family:'Manrope',sans-serif;font-size:0.8rem;font-weight:600;display:flex;align-items:center;gap:0.4rem;text-shadow:0 1px 4px rgba(0,0,0,0.5)}
         .signature-region svg{width:13px;height:13px}
+        .signature-type-badge{position:absolute;top:1rem;right:1rem;z-index:2;background:rgba(15,23,42,0.75);backdrop-filter:blur(10px);color:white;font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.35rem 0.7rem;border-radius:var(--radius-full)}
         .signature-body{padding:1.5rem;flex:1;display:flex;flex-direction:column}
         .signature-body h3{font-family:'Playfair Display',serif;font-size:1.3rem;line-height:1.25;color:var(--dark);margin-bottom:0.6rem}
         .signature-body p{color:var(--gray-500);font-size:0.88rem;line-height:1.65;margin-bottom:1.25rem;flex:1}
@@ -208,123 +169,22 @@
 
         /* HOME PROMO BANNER */
         .home-promo-section{max-width:1400px;margin:4rem auto;padding:0 2rem}
-        .home-promo-banner{
-            position:relative;
-            border-radius:var(--radius-xl);
-            overflow:hidden;
-            background:
-                linear-gradient(135deg,rgba(44,181,200,0.92) 0%,rgba(26,139,158,0.85) 60%,rgba(15,23,42,0.75) 100%),
-                url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600") center/cover no-repeat;
-            padding:5rem 3rem;
-            text-align:center;
-            color:white;
-            min-height:380px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-        }
-        .home-promo-banner::before{
-            content:'';
-            position:absolute;
-            top:-50%;
-            right:-15%;
-            width:600px;
-            height:600px;
-            background:radial-gradient(circle,rgba(220,200,148,0.25) 0%,transparent 70%);
-            border-radius:50%;
-            pointer-events:none;
-        }
-        .home-promo-banner::after{
-            content:'';
-            position:absolute;
-            bottom:-40%;
-            left:-10%;
-            width:500px;
-            height:500px;
-            background:radial-gradient(circle,rgba(255,255,255,0.10) 0%,transparent 70%);
-            border-radius:50%;
-            pointer-events:none;
-        }
-        .home-promo-content{
-            position:relative;
-            z-index:2;
-            max-width:780px;
-            margin:0 auto;
-        }
-        .home-promo-tag{
-            display:inline-flex;
-            align-items:center;
-            gap:0.5rem;
-            background:rgba(255,255,255,0.18);
-            border:1px solid rgba(255,255,255,0.35);
-            backdrop-filter:blur(10px);
-            color:white;
-            padding:0.5rem 1.1rem;
-            border-radius:var(--radius-full);
-            font-family:'Manrope',sans-serif;
-            font-size:0.72rem;
-            font-weight:800;
-            letter-spacing:0.18em;
-            text-transform:uppercase;
-            margin-bottom:1.5rem;
-        }
-        .home-promo-tag svg{width:14px;height:14px;color:var(--beige);}
-        .home-promo-banner h2{
-            font-size:clamp(2rem,4.5vw,3rem);
-            color:white;
-            line-height:1.1;
-            margin-bottom:1rem;
-            letter-spacing:-0.02em;
-        }
-        .home-promo-banner h2 .accent{
-            font-style:italic;
-            color:var(--beige);
-        }
-        .home-promo-banner p{
-            font-size:1.08rem;
-            line-height:1.7;
-            color:rgba(255,255,255,0.92);
-            max-width:640px;
-            margin:0 auto 2.25rem;
-        }
-        .home-promo-actions{
-            display:flex;
-            gap:1rem;
-            justify-content:center;
-            flex-wrap:wrap;
-        }
-        .home-promo-btn{
-            padding:1rem 2.25rem;
-            border-radius:var(--radius-full);
-            font-family:'Manrope',sans-serif;
-            font-weight:700;
-            font-size:0.92rem;
-            display:inline-flex;
-            align-items:center;
-            gap:0.6rem;
-            transition:all 0.3s;
-        }
-        .home-promo-btn-primary{
-            background:white;
-            color:var(--turquesa-dark);
-        }
-        .home-promo-btn-primary:hover{
-            background:var(--beige);
-            color:var(--dark);
-            transform:translateY(-3px);
-            box-shadow:0 15px 35px rgba(0,0,0,0.25);
-        }
-        .home-promo-btn-secondary{
-            background:rgba(255,255,255,0.10);
-            border:1px solid rgba(255,255,255,0.40);
-            color:white;
-            backdrop-filter:blur(10px);
-        }
-        .home-promo-btn-secondary:hover{
-            background:rgba(255,255,255,0.22);
-            transform:translateY(-3px);
-        }
-        .home-promo-btn svg{width:16px;height:16px;}
+        .home-promo-banner{position:relative;border-radius:var(--radius-xl);overflow:hidden;background:linear-gradient(135deg,rgba(44,181,200,0.92) 0%,rgba(26,139,158,0.85) 60%,rgba(15,23,42,0.75) 100%),url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600") center/cover no-repeat;padding:5rem 3rem;text-align:center;color:white;min-height:380px;display:flex;align-items:center;justify-content:center}
+        .home-promo-banner::before{content:'';position:absolute;top:-50%;right:-15%;width:600px;height:600px;background:radial-gradient(circle,rgba(220,200,148,0.25) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+        .home-promo-banner::after{content:'';position:absolute;bottom:-40%;left:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(255,255,255,0.10) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+        .home-promo-content{position:relative;z-index:2;max-width:780px;margin:0 auto}
+        .home-promo-tag{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.35);backdrop-filter:blur(10px);color:white;padding:0.5rem 1.1rem;border-radius:var(--radius-full);font-family:'Manrope',sans-serif;font-size:0.72rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:1.5rem}
+        .home-promo-tag svg{width:14px;height:14px;color:var(--beige)}
+        .home-promo-banner h2{font-size:clamp(2rem,4.5vw,3rem);color:white;line-height:1.1;margin-bottom:1rem;letter-spacing:-0.02em}
+        .home-promo-banner h2 .accent{font-style:italic;color:var(--beige)}
+        .home-promo-banner p{font-size:1.08rem;line-height:1.7;color:rgba(255,255,255,0.92);max-width:640px;margin:0 auto 2.25rem}
+        .home-promo-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+        .home-promo-btn{padding:1rem 2.25rem;border-radius:var(--radius-full);font-family:'Manrope',sans-serif;font-weight:700;font-size:0.92rem;display:inline-flex;align-items:center;gap:0.6rem;transition:all 0.3s}
+        .home-promo-btn-primary{background:white;color:var(--turquesa-dark)}
+        .home-promo-btn-primary:hover{background:var(--beige);color:var(--dark);transform:translateY(-3px);box-shadow:0 15px 35px rgba(0,0,0,0.25)}
+        .home-promo-btn-secondary{background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.40);color:white;backdrop-filter:blur(10px)}
+        .home-promo-btn-secondary:hover{background:rgba(255,255,255,0.22);transform:translateY(-3px)}
+        .home-promo-btn svg{width:16px;height:16px}
 
         /* TRUST */
         .trust-section{background:var(--bg-light);padding:5rem 2rem;margin-top:4rem;position:relative;overflow:hidden}
@@ -345,16 +205,24 @@
         .testimonials-section{padding:5rem 2rem;max-width:1400px;margin:0 auto}
         .testimonials-header{text-align:center;margin-bottom:3rem}
         .testimonials-header h2{font-size:clamp(2rem,4vw,2.8rem);color:var(--dark);margin-bottom:1rem}
-        .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
-        .testimonial-card{background:white;border:1px solid var(--gray-100);border-radius:var(--radius-xl);padding:2rem;transition:all 0.4s;position:relative}
+        .testimonials-header .google-rating{display:inline-flex;align-items:center;gap:0.75rem;margin-top:1rem;padding:0.6rem 1.2rem;background:white;border:1px solid var(--gray-200);border-radius:var(--radius-full);font-family:'Manrope',sans-serif}
+        .testimonials-header .google-rating .g-stars{color:var(--beige-dark);letter-spacing:2px;font-size:1rem}
+        .testimonials-header .google-rating .g-score{font-weight:800;color:var(--dark);font-size:0.95rem}
+        .testimonials-header .google-rating .g-label{color:var(--gray-500);font-size:0.82rem;font-weight:600}
+        .testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+        .testimonial-card{background:white;border:1px solid var(--gray-100);border-radius:var(--radius-xl);padding:2rem;transition:all 0.4s;position:relative;display:flex;flex-direction:column}
         .testimonial-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:transparent}
         .quote-mark{font-family:'Playfair Display',serif;font-size:4rem;color:var(--turquesa);opacity:0.2;line-height:1;position:absolute;top:1rem;right:1.5rem}
         .testimonial-stars{color:var(--beige-dark);margin-bottom:1rem;font-size:1rem;letter-spacing:2px}
-        .testimonial-text{color:var(--gray-700);line-height:1.7;margin-bottom:1.5rem;font-size:0.95rem}
+        .testimonial-text{color:var(--gray-700);line-height:1.7;margin-bottom:1.5rem;font-size:0.95rem;flex:1}
         .testimonial-author{display:flex;align-items:center;gap:0.75rem;padding-top:1.5rem;border-top:1px solid var(--gray-100)}
         .author-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--turquesa) 0%,var(--turquesa-dark) 100%);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:1rem}
         .author-info .name{font-weight:600;color:var(--dark);font-size:0.95rem}
         .author-info .trip{color:var(--gray-500);font-size:0.8rem}
+        .testimonials-footer{text-align:center;margin-top:3rem}
+        .testimonials-footer a{display:inline-flex;align-items:center;gap:0.6rem;padding:0.9rem 1.8rem;background:white;border:1px solid var(--gray-200);border-radius:var(--radius-full);font-family:'Manrope',sans-serif;font-weight:700;font-size:0.88rem;color:var(--dark);transition:all 0.3s}
+        .testimonials-footer a:hover{border-color:var(--turquesa);color:var(--turquesa);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+        .testimonials-footer a svg{width:18px;height:18px}
 
         /* REGIONS */
         .regions-section{max-width:1400px;margin:4rem auto;padding:0 2rem}
@@ -438,6 +306,7 @@
             .region-card{height:260px}
             .footer-content{grid-template-columns:1fr 1fr;gap:2rem}
             .home-promo-banner{padding:4rem 2rem}
+            .testimonials-grid{grid-template-columns:1fr}
         }
         @media (max-width:768px){
             .nav-menu{display:none}
@@ -456,6 +325,7 @@
             .signature-grid{grid-template-columns:1fr;gap:1.25rem}
             .trust-section{padding:3rem 1.5rem}
             .testimonials-section{padding:3rem 1.5rem}
+            .testimonials-grid{grid-template-columns:1fr}
             .regions-section{padding:0 1.5rem}
             .regions-grid{grid-template-columns:1fr}
             .regions-header{flex-direction:column;gap:1rem;align-items:flex-start}
@@ -496,7 +366,7 @@
                 <li><a href="destinatios">Destinations</a></li>
                 <li><a href="/about/">About</a></li>
                 <li><a href="/servicios/">Services</a></li>
-                <li><a href="#">FAQ</a></li>
+                <li><a href="/faq/">FAQ</a></li>
                 <li><a href="/contacto/">Contact</a></li>
             </ul>
             <div class="header-actions">
@@ -564,9 +434,10 @@
         </a>
     </section>
 
-    <!-- CARDS -->
+    <!-- CARDS - Aspect ratio 16/10, con data-program-id para conectar a DB -->
     <section class="cards-grid">
-        <div class="app-card reveal">
+        <!-- PROGRAM 01 -->
+        <article class="app-card reveal" data-program-id="cinque-terre-private-coastal-hiking">
             <div class="img-wrapper">
                 <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800" alt="Cinque Terre" loading="lazy">
                 <div class="img-overlay"></div>
@@ -588,12 +459,16 @@
                         <span class="score">4.9</span>
                         <span class="reviews">(127)</span>
                     </div>
-                    <a href="#" class="card-action">View Details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="#" class="card-action program-link" data-program-id="cinque-terre-private-coastal-hiking" data-program-url="">
+                        View Details
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
                 </div>
             </div>
-        </div>
+        </article>
 
-        <div class="app-card reveal">
+        <!-- PROGRAM 02 -->
+        <article class="app-card reveal" data-program-id="santorini-private-catamaran">
             <div class="img-wrapper">
                 <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800" alt="Santorini" loading="lazy">
                 <div class="img-overlay"></div>
@@ -615,12 +490,16 @@
                         <span class="score">5.0</span>
                         <span class="reviews">(89)</span>
                     </div>
-                    <a href="#" class="card-action">View Details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="#" class="card-action program-link" data-program-id="santorini-private-catamaran" data-program-url="">
+                        View Details
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
                 </div>
             </div>
-        </div>
+        </article>
 
-        <div class="app-card reveal">
+        <!-- PROGRAM 03 -->
+        <article class="app-card reveal" data-program-id="iguazu-private-overland">
             <div class="img-wrapper">
                 <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800" alt="Iguazu Falls" loading="lazy">
                 <div class="img-overlay"></div>
@@ -642,12 +521,16 @@
                         <span class="score">4.9</span>
                         <span class="reviews">(203)</span>
                     </div>
-                    <a href="#" class="card-action">View Details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="#" class="card-action program-link" data-program-id="iguazu-private-overland" data-program-url="">
+                        View Details
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
                 </div>
             </div>
-        </div>
+        </article>
 
-        <div class="app-card reveal">
+        <!-- PROGRAM 04 -->
+        <article class="app-card reveal" data-program-id="beijing-private-temple-palace">
             <div class="img-wrapper">
                 <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800" alt="Beijing" loading="lazy">
                 <div class="img-overlay"></div>
@@ -669,12 +552,16 @@
                         <span class="score">4.8</span>
                         <span class="reviews">(156)</span>
                     </div>
-                    <a href="#" class="card-action">View Details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="#" class="card-action program-link" data-program-id="beijing-private-temple-palace" data-program-url="">
+                        View Details
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
                 </div>
             </div>
-        </div>
+        </article>
 
-        <div class="app-card reveal">
+        <!-- PROGRAM 05 -->
+        <article class="app-card reveal" data-program-id="buenos-aires-private-tango">
             <div class="img-wrapper">
                 <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800" alt="Buenos Aires" loading="lazy">
                 <div class="img-overlay"></div>
@@ -696,12 +583,16 @@
                         <span class="score">4.9</span>
                         <span class="reviews">(94)</span>
                     </div>
-                    <a href="#" class="card-action">View Details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="#" class="card-action program-link" data-program-id="buenos-aires-private-tango" data-program-url="">
+                        View Details
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
                 </div>
             </div>
-        </div>
+        </article>
 
-        <div class="app-card reveal">
+        <!-- PROGRAM 06 -->
+        <article class="app-card reveal" data-program-id="lisbon-private-fado-wine">
             <div class="img-wrapper">
                 <img src="https://images.unsplash.com/photo-1555881400-74d7c5d9f58a?w=800" alt="Lisbon" loading="lazy">
                 <div class="img-overlay"></div>
@@ -723,33 +614,43 @@
                         <span class="score">4.8</span>
                         <span class="reviews">(78)</span>
                     </div>
-                    <a href="#" class="card-action">View Details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="#" class="card-action program-link" data-program-id="lisbon-private-fado-wine" data-program-url="">
+                        View Details
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
                 </div>
             </div>
-        </div>
+        </article>
     </section>
 
-    <!-- SIGNATURE JOURNEYS (Exoticca Partner Packages) -->
+    <!-- SIGNATURE JOURNEYS (Exoticca Group Packages) -->
     <section class="signature-section reveal">
         <div class="signature-header">
             <div class="section-label">Signature Journeys</div>
-            <h2>Curated Multi-Day Packages</h2>
-            <p>Handpicked journeys from our trusted partner Exoticca — book directly through MyExcursions and enjoy the same private, personalized service you know.</p>
+            <h2>Curated Group Departures</h2>
+            <p>Handpicked multi-day journeys from our trusted partner Exoticca. These are set group departures — not private tours — with shared transport and group sizes typically between 2 and 30 travelers.</p>
             <div class="signature-partner-badge">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 In partnership with Exoticca
             </div>
+
+            <div class="signature-note">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <div>
+                    <strong>Group departures.</strong> Private departures may be available for groups of 10 or more on request. Specials and pricing change regularly — view current offers on Exoticca.
+                </div>
+            </div>
         </div>
 
         <div class="signature-grid">
-            <!-- PACKAGE 01 — VIETNAM -->
             <article class="signature-card">
                 <div class="signature-media">
-                    <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=800" alt="Vietnam & Cambodia Discovery" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=800" alt="Vietnam & Cambodia Discovery group tour" loading="lazy">
                     <span class="signature-duration">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                         13 Days
                     </span>
+                    <span class="signature-type-badge">Group Tour</span>
                     <span class="signature-region">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                         Vietnam &amp; Cambodia
@@ -757,7 +658,7 @@
                 </div>
                 <div class="signature-body">
                     <h3>Vietnam &amp; Cambodia Discovery</h3>
-                    <p>Halong Bay cruise, Hanoi's Old Quarter, Angkor Wat temples, and the Mekong Delta — a journey through the soul of Southeast Asia.</p>
+                    <p>Halong Bay cruise, Hanoi's Old Quarter, Angkor Wat temples, and the Mekong Delta — a group journey through the soul of Southeast Asia.</p>
                     <div class="signature-meta">
                         <span class="signature-powered">By Exoticca</span>
                         <a href="https://www.exoticca.com/us?advisor_token=tim-harwood-019f8b31-7038-70c9-a7a7-b5c996b0c7a7" target="_blank" rel="noopener" class="signature-cta">
@@ -768,14 +669,14 @@
                 </div>
             </article>
 
-            <!-- PACKAGE 02 — PERU -->
             <article class="signature-card">
                 <div class="signature-media">
-                    <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800" alt="Peru: Machu Picchu & Sacred Valley" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800" alt="Peru Machu Picchu group tour" loading="lazy">
                     <span class="signature-duration">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                         9 Days
                     </span>
+                    <span class="signature-type-badge">Group Tour</span>
                     <span class="signature-region">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                         Peru
@@ -794,14 +695,14 @@
                 </div>
             </article>
 
-            <!-- PACKAGE 03 — KENYA -->
             <article class="signature-card">
                 <div class="signature-media">
-                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800" alt="Kenya Safari Adventure" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800" alt="Kenya Safari group tour" loading="lazy">
                     <span class="signature-duration">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                         8 Days
                     </span>
+                    <span class="signature-type-badge">Group Tour</span>
                     <span class="signature-region">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                         Kenya
@@ -809,7 +710,7 @@
                 </div>
                 <div class="signature-body">
                     <h3>Kenya Safari Adventure</h3>
-                    <p>Maasai Mara game drives, Amboseli elephants, and the Great Rift Valley — an unforgettable African safari crafted for wildlife lovers.</p>
+                    <p>Maasai Mara game drives, Amboseli elephants, and the Great Rift Valley — a group journey crafted for wildlife lovers.</p>
                     <div class="signature-meta">
                         <span class="signature-powered">By Exoticca</span>
                         <a href="https://www.exoticca.com/us?advisor_token=tim-harwood-019f8b31-7038-70c9-a7a7-b5c996b0c7a7" target="_blank" rel="noopener" class="signature-cta">
@@ -823,13 +724,13 @@
 
         <div class="signature-footer">
             <a href="https://www.exoticca.com/us?advisor_token=tim-harwood-019f8b31-7038-70c9-a7a7-b5c996b0c7a7" target="_blank" rel="noopener">
-                View All Exoticca Journeys
+                View All Current Exoticca Specials
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
         </div>
     </section>
 
-    <!-- HOME PROMO BANNER (Reemplaza "Experience of the Month") -->
+    <!-- HOME PROMO BANNER -->
     <section class="home-promo-section reveal">
         <div class="home-promo-banner">
             <div class="home-promo-content">
@@ -885,49 +786,77 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
+    <!-- TESTIMONIALS - SOLO 4 -->
     <section class="testimonials-section">
         <div class="testimonials-header reveal">
             <div class="section-label" style="justify-content:center">Traveler Stories</div>
             <h2>What Our Guests Say</h2>
+            <div class="google-rating">
+                <span class="g-stars">★★★★★</span>
+                <span class="g-score">4.9</span>
+                <span class="g-label">Based on verified traveler reviews</span>
+            </div>
         </div>
+
         <div class="testimonials-grid">
             <div class="testimonial-card reveal">
                 <div class="quote-mark">"</div>
                 <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"An absolutely magical experience in Santorini. The private catamaran cruise was beyond our expectations. Every detail was perfect."</p>
+                <p class="testimonial-text">"For anyone wanting a private tour/excursion I would encourage you to contact Tim at MyExcursions. You can take one of the excursions offered by the cruise line, but you get way more for your money booking with Tim at MyExcursions. THANK YOU for taking such good care of us."</p>
                 <div class="testimonial-author">
-                    <div class="author-avatar">SC</div>
+                    <div class="author-avatar">KH</div>
                     <div class="author-info">
-                        <div class="name">Sarah & Carlos</div>
-                        <div class="trip">Santorini Catamaran • Honeymoon</div>
+                        <div class="name">Kevin H.</div>
+                        <div class="trip">Private Excursion</div>
                     </div>
                 </div>
             </div>
+
             <div class="testimonial-card reveal">
                 <div class="quote-mark">"</div>
                 <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"The Iguazu Falls program was unforgettable. Our guide was incredibly knowledgeable, and the private access made all the difference."</p>
+                <p class="testimonial-text">"We used My Excursions for a 10 day anniversary trip to London. Tim went above and beyond in helping us to plan the itinerary, including day trips outside of London, and secured guides and drivers for private transports and tours. We highly recommend My Excursions and we will definitely use their service for our next trip abroad!"</p>
                 <div class="testimonial-author">
-                    <div class="author-avatar">MR</div>
+                    <div class="author-avatar">SL</div>
                     <div class="author-info">
-                        <div class="name">Marcus Reynolds</div>
-                        <div class="trip">Iguazu Falls Overland • Family</div>
+                        <div class="name">Scott and Lisa</div>
+                        <div class="trip">10-Day London Anniversary Trip</div>
                     </div>
                 </div>
             </div>
+
             <div class="testimonial-card reveal">
                 <div class="quote-mark">"</div>
                 <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"From planning to execution, MyExcursions exceeded every expectation. Our Cinque Terre hiking trip was tailored perfectly for our small group."</p>
+                <p class="testimonial-text">"Always professional, responsive, knowledgeable, thorough, and a great resource for me as a travel agent. They've helped with excursions and transportation for many of my clients, including some confined to wheelchairs. Everything is done just right and I am always confident that my clients will be well taken care of by My Excursions. I highly recommend!"</p>
                 <div class="testimonial-author">
-                    <div class="author-avatar">ET</div>
+                    <div class="author-avatar">KC</div>
                     <div class="author-info">
-                        <div class="name">Emma Thompson</div>
-                        <div class="trip">Cinque Terre Private Tour • Friends</div>
+                        <div class="name">Karen C-O</div>
+                        <div class="trip">Travel Agent Partner</div>
                     </div>
                 </div>
             </div>
+
+            <div class="testimonial-card reveal">
+                <div class="quote-mark">"</div>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"I just had a group where all shore excursions were planned by MyExcursions. Aside from wonderful guides that were always on time and extremely informative, the programs that they provided were never on my radar and were exactly what my group needed. By contacting MyExcursions I not only saved time but was able to give my group experiences of a lifetime."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SB</div>
+                    <div class="author-info">
+                        <div class="name">Sylvia B.</div>
+                        <div class="trip">Group Shore Excursions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonials-footer reveal">
+            <a href="https://www.google.com/search?q=MyExcursions" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                See All Reviews on Google
+            </a>
         </div>
     </section>
 
@@ -1090,6 +1019,27 @@
                 e.stopPropagation();
                 btn.classList.toggle('active');
                 btn.textContent=btn.classList.contains('active')?'♥':'♡';
+            });
+        });
+
+        /* =======================================================
+           PROGRAM LINKS
+           Cada tarjeta tiene data-program-id único y data-program-url.
+           Cuando la URL esté disponible desde la base de datos o CMS,
+           se puede asignar en el HTML o cargar dinámicamente.
+        ======================================================== */
+        const programLinks=document.querySelectorAll('.program-link');
+        programLinks.forEach(function(link){
+            link.addEventListener('click',function(event){
+                const programUrl=link.getAttribute('data-program-url');
+                const programId=link.getAttribute('data-program-id');
+                if(programUrl && programUrl.trim()!==''){
+                    event.preventDefault();
+                    window.location.href=programUrl;
+                } else {
+                    event.preventDefault();
+                    console.info('Program URL pending for:',programId);
+                }
             });
         });
 
