@@ -82,7 +82,6 @@
         .hero-subtitle{font-size:1.15rem;line-height:1.7;max-width:620px;color:rgba(255,255,255,0.85);margin-bottom:2.5rem;animation:fadeInUp 0.8s 0.6s both}
         @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
-        /* BUSCADOR SIMPLIFICADO */
         .search-widget-simple {
             background: white;
             border-radius: var(--radius-full);
@@ -174,6 +173,158 @@
         .card-action{color:var(--turquesa);font-weight:600;font-size:0.85rem;font-family:'Manrope',sans-serif;display:inline-flex;align-items:center;gap:0.3rem;transition:gap 0.3s}
         .app-card:hover .card-action{gap:0.6rem}
         .card-action svg{width:14px;height:14px}
+
+        /* SIGNATURE JOURNEYS (Exoticca Partner Packages) */
+        .signature-section{max-width:1400px;margin:4rem auto;padding:0 2rem}
+        .signature-header{text-align:center;margin-bottom:3rem}
+        .signature-header .section-label{justify-content:center}
+        .signature-header .section-label::before{display:none}
+        .signature-header h2{font-size:clamp(2rem,4vw,2.8rem);color:var(--dark);margin-bottom:1rem}
+        .signature-header p{color:var(--gray-500);font-size:1.02rem;max-width:640px;margin:0 auto}
+        .signature-partner-badge{display:inline-flex;align-items:center;gap:0.5rem;background:var(--bg-light);border:1px solid var(--gray-200);padding:0.4rem 0.9rem;border-radius:var(--radius-full);font-family:'Manrope',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-700);margin-top:1.25rem}
+        .signature-partner-badge svg{width:14px;height:14px;color:var(--turquesa)}
+        .signature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.75rem}
+        .signature-card{background:white;border-radius:var(--radius-xl);overflow:hidden;transition:all 0.5s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;border:1px solid var(--gray-100);box-shadow:var(--shadow-sm);position:relative}
+        .signature-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-xl);border-color:transparent}
+        .signature-media{position:relative;aspect-ratio:4/3;overflow:hidden}
+        .signature-media img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease}
+        .signature-card:hover .signature-media img{transform:scale(1.08)}
+        .signature-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(15,23,42,0.55) 100%)}
+        .signature-duration{position:absolute;top:1rem;left:1rem;z-index:2;background:var(--beige);color:var(--dark);font-family:'Manrope',sans-serif;font-size:0.68rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 0.85rem;border-radius:var(--radius-full);display:inline-flex;align-items:center;gap:0.35rem}
+        .signature-duration svg{width:11px;height:11px}
+        .signature-region{position:absolute;bottom:1rem;left:1rem;z-index:2;color:white;font-family:'Manrope',sans-serif;font-size:0.8rem;font-weight:600;display:flex;align-items:center;gap:0.4rem;text-shadow:0 1px 4px rgba(0,0,0,0.5)}
+        .signature-region svg{width:13px;height:13px}
+        .signature-body{padding:1.5rem;flex:1;display:flex;flex-direction:column}
+        .signature-body h3{font-family:'Playfair Display',serif;font-size:1.3rem;line-height:1.25;color:var(--dark);margin-bottom:0.6rem}
+        .signature-body p{color:var(--gray-500);font-size:0.88rem;line-height:1.65;margin-bottom:1.25rem;flex:1}
+        .signature-meta{display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--gray-100);gap:0.75rem}
+        .signature-cta{color:var(--turquesa);font-family:'Manrope',sans-serif;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;display:inline-flex;align-items:center;gap:0.4rem;transition:gap 0.3s}
+        .signature-card:hover .signature-cta{gap:0.7rem}
+        .signature-cta svg{width:13px;height:13px}
+        .signature-powered{font-family:'Manrope',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-400)}
+        .signature-footer{text-align:center;margin-top:2.5rem}
+        .signature-footer a{font-family:'Manrope',sans-serif;font-weight:600;color:var(--dark);display:inline-flex;align-items:center;gap:0.5rem;padding-bottom:0.5rem;border-bottom:2px solid var(--turquesa);transition:gap 0.3s}
+        .signature-footer a:hover{gap:1rem}
+
+        /* HOME PROMO BANNER */
+        .home-promo-section{max-width:1400px;margin:4rem auto;padding:0 2rem}
+        .home-promo-banner{
+            position:relative;
+            border-radius:var(--radius-xl);
+            overflow:hidden;
+            background:
+                linear-gradient(135deg,rgba(44,181,200,0.92) 0%,rgba(26,139,158,0.85) 60%,rgba(15,23,42,0.75) 100%),
+                url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600") center/cover no-repeat;
+            padding:5rem 3rem;
+            text-align:center;
+            color:white;
+            min-height:380px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .home-promo-banner::before{
+            content:'';
+            position:absolute;
+            top:-50%;
+            right:-15%;
+            width:600px;
+            height:600px;
+            background:radial-gradient(circle,rgba(220,200,148,0.25) 0%,transparent 70%);
+            border-radius:50%;
+            pointer-events:none;
+        }
+        .home-promo-banner::after{
+            content:'';
+            position:absolute;
+            bottom:-40%;
+            left:-10%;
+            width:500px;
+            height:500px;
+            background:radial-gradient(circle,rgba(255,255,255,0.10) 0%,transparent 70%);
+            border-radius:50%;
+            pointer-events:none;
+        }
+        .home-promo-content{
+            position:relative;
+            z-index:2;
+            max-width:780px;
+            margin:0 auto;
+        }
+        .home-promo-tag{
+            display:inline-flex;
+            align-items:center;
+            gap:0.5rem;
+            background:rgba(255,255,255,0.18);
+            border:1px solid rgba(255,255,255,0.35);
+            backdrop-filter:blur(10px);
+            color:white;
+            padding:0.5rem 1.1rem;
+            border-radius:var(--radius-full);
+            font-family:'Manrope',sans-serif;
+            font-size:0.72rem;
+            font-weight:800;
+            letter-spacing:0.18em;
+            text-transform:uppercase;
+            margin-bottom:1.5rem;
+        }
+        .home-promo-tag svg{width:14px;height:14px;color:var(--beige);}
+        .home-promo-banner h2{
+            font-size:clamp(2rem,4.5vw,3rem);
+            color:white;
+            line-height:1.1;
+            margin-bottom:1rem;
+            letter-spacing:-0.02em;
+        }
+        .home-promo-banner h2 .accent{
+            font-style:italic;
+            color:var(--beige);
+        }
+        .home-promo-banner p{
+            font-size:1.08rem;
+            line-height:1.7;
+            color:rgba(255,255,255,0.92);
+            max-width:640px;
+            margin:0 auto 2.25rem;
+        }
+        .home-promo-actions{
+            display:flex;
+            gap:1rem;
+            justify-content:center;
+            flex-wrap:wrap;
+        }
+        .home-promo-btn{
+            padding:1rem 2.25rem;
+            border-radius:var(--radius-full);
+            font-family:'Manrope',sans-serif;
+            font-weight:700;
+            font-size:0.92rem;
+            display:inline-flex;
+            align-items:center;
+            gap:0.6rem;
+            transition:all 0.3s;
+        }
+        .home-promo-btn-primary{
+            background:white;
+            color:var(--turquesa-dark);
+        }
+        .home-promo-btn-primary:hover{
+            background:var(--beige);
+            color:var(--dark);
+            transform:translateY(-3px);
+            box-shadow:0 15px 35px rgba(0,0,0,0.25);
+        }
+        .home-promo-btn-secondary{
+            background:rgba(255,255,255,0.10);
+            border:1px solid rgba(255,255,255,0.40);
+            color:white;
+            backdrop-filter:blur(10px);
+        }
+        .home-promo-btn-secondary:hover{
+            background:rgba(255,255,255,0.22);
+            transform:translateY(-3px);
+        }
+        .home-promo-btn svg{width:16px;height:16px;}
 
         /* TRUST */
         .trust-section{background:var(--bg-light);padding:5rem 2rem;margin-top:4rem;position:relative;overflow:hidden}
@@ -286,6 +437,7 @@
             .region-card:first-child{grid-row:span 1}
             .region-card{height:260px}
             .footer-content{grid-template-columns:1fr 1fr;gap:2rem}
+            .home-promo-banner{padding:4rem 2rem}
         }
         @media (max-width:768px){
             .nav-menu{display:none}
@@ -300,6 +452,8 @@
             .intro-section{grid-template-columns:1fr;text-align:center}
             .intro-content p{margin:0 auto}
             .cards-grid{grid-template-columns:1fr;padding:1.5rem;gap:1.25rem}
+            .signature-section{padding:0 1.5rem;margin:3rem auto}
+            .signature-grid{grid-template-columns:1fr;gap:1.25rem}
             .trust-section{padding:3rem 1.5rem}
             .testimonials-section{padding:3rem 1.5rem}
             .regions-section{padding:0 1.5rem}
@@ -311,12 +465,19 @@
             .footer-bottom{flex-direction:column;text-align:center}
             .mobile-bottom-nav{display:block}
             body{padding-bottom:80px}
+            .home-promo-section{padding:0 1.5rem;margin:3rem auto}
+            .home-promo-banner{padding:3rem 1.5rem}
+            .home-promo-banner p{font-size:1rem}
         }
         @media (max-width:480px){
             .hero h1{font-size:2.3rem}
             .hero-subtitle{font-size:1rem}
             .hero-stats{gap:1rem}
             .hero-stat .num{font-size:1.6rem}
+            .home-promo-banner{padding:2.5rem 1.25rem}
+            .home-promo-banner h2{font-size:1.75rem}
+            .home-promo-actions{flex-direction:column;align-items:center}
+            .home-promo-btn{width:100%;justify-content:center}
         }
     </style>
 </head>
@@ -563,6 +724,129 @@
                         <span class="reviews">(78)</span>
                     </div>
                     <a href="#" class="card-action">View Details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIGNATURE JOURNEYS (Exoticca Partner Packages) -->
+    <section class="signature-section reveal">
+        <div class="signature-header">
+            <div class="section-label">Signature Journeys</div>
+            <h2>Curated Multi-Day Packages</h2>
+            <p>Handpicked journeys from our trusted partner Exoticca — book directly through MyExcursions and enjoy the same private, personalized service you know.</p>
+            <div class="signature-partner-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                In partnership with Exoticca
+            </div>
+        </div>
+
+        <div class="signature-grid">
+            <!-- PACKAGE 01 — VIETNAM -->
+            <article class="signature-card">
+                <div class="signature-media">
+                    <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=800" alt="Vietnam & Cambodia Discovery" loading="lazy">
+                    <span class="signature-duration">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        13 Days
+                    </span>
+                    <span class="signature-region">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Vietnam &amp; Cambodia
+                    </span>
+                </div>
+                <div class="signature-body">
+                    <h3>Vietnam &amp; Cambodia Discovery</h3>
+                    <p>Halong Bay cruise, Hanoi's Old Quarter, Angkor Wat temples, and the Mekong Delta — a journey through the soul of Southeast Asia.</p>
+                    <div class="signature-meta">
+                        <span class="signature-powered">By Exoticca</span>
+                        <a href="https://www.exoticca.com/us?advisor_token=tim-harwood-019f8b31-7038-70c9-a7a7-b5c996b0c7a7" target="_blank" rel="noopener" class="signature-cta">
+                            View Journey
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PACKAGE 02 — PERU -->
+            <article class="signature-card">
+                <div class="signature-media">
+                    <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800" alt="Peru: Machu Picchu & Sacred Valley" loading="lazy">
+                    <span class="signature-duration">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        9 Days
+                    </span>
+                    <span class="signature-region">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Peru
+                    </span>
+                </div>
+                <div class="signature-body">
+                    <h3>Peru: Lima, Cusco &amp; Machu Picchu</h3>
+                    <p>From the colonial streets of Lima to the mist-shrouded citadel of Machu Picchu — through the Sacred Valley and the heart of the Inca Empire.</p>
+                    <div class="signature-meta">
+                        <span class="signature-powered">By Exoticca</span>
+                        <a href="https://www.exoticca.com/us?advisor_token=tim-harwood-019f8b31-7038-70c9-a7a7-b5c996b0c7a7" target="_blank" rel="noopener" class="signature-cta">
+                            View Journey
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PACKAGE 03 — KENYA -->
+            <article class="signature-card">
+                <div class="signature-media">
+                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800" alt="Kenya Safari Adventure" loading="lazy">
+                    <span class="signature-duration">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        8 Days
+                    </span>
+                    <span class="signature-region">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Kenya
+                    </span>
+                </div>
+                <div class="signature-body">
+                    <h3>Kenya Safari Adventure</h3>
+                    <p>Maasai Mara game drives, Amboseli elephants, and the Great Rift Valley — an unforgettable African safari crafted for wildlife lovers.</p>
+                    <div class="signature-meta">
+                        <span class="signature-powered">By Exoticca</span>
+                        <a href="https://www.exoticca.com/us?advisor_token=tim-harwood-019f8b31-7038-70c9-a7a7-b5c996b0c7a7" target="_blank" rel="noopener" class="signature-cta">
+                            View Journey
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="signature-footer">
+            <a href="https://www.exoticca.com/us?advisor_token=tim-harwood-019f8b31-7038-70c9-a7a7-b5c996b0c7a7" target="_blank" rel="noopener">
+                View All Exoticca Journeys
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- HOME PROMO BANNER (Reemplaza "Experience of the Month") -->
+    <section class="home-promo-section reveal">
+        <div class="home-promo-banner">
+            <div class="home-promo-content">
+                <span class="home-promo-tag">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    Discover MyExcursions
+                </span>
+                <h2>Every Journey Begins with <span class="accent">a Dream</span></h2>
+                <p>Explore our full collection of private tours, shore excursions, and bespoke travel programs. With over 1,000 destinations and 4,000 private experiences, your perfect journey is waiting.</p>
+                <div class="home-promo-actions">
+                    <a href="/destinations/" class="home-promo-btn home-promo-btn-primary">
+                        Explore All Experiences
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="/contacto/" class="home-promo-btn home-promo-btn-secondary">
+                        Start Planning
+                    </a>
                 </div>
             </div>
         </div>
