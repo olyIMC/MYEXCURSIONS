@@ -6,7 +6,7 @@
     <meta name="description" content="With over 40 years of experience, MyExcursions offers private tours, shore excursions, and custom travel experiences worldwide. Meet our founders Tim & Dinora Harwood.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --turquesa: #2CB5C8;
@@ -45,11 +45,13 @@
         img{max-width:100%;display:block}
         .container{max-width:1400px;margin:0 auto;padding:0 2rem}
 
+        /* LOGO SVG */
+        .logo-svg{height:52px;width:auto;display:block}
+
         /* HEADER */
         header{background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(0,0,0,0.04);padding:1rem 0;transition:all 0.3s}
         .header-container{display:flex;align-items:center;justify-content:space-between}
         .logo{display:flex;align-items:center;gap:0.5rem}
-        .logo img{height:50px;width:auto;display:block}
         .nav-menu{display:flex;gap:2.25rem;list-style:none}
         .nav-menu a{font-family:'Manrope',sans-serif;color:var(--gray-700);font-weight:500;font-size:0.95rem;position:relative;padding:0.5rem 0;transition:color 0.3s}
         .nav-menu a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--turquesa);transition:width 0.3s}
@@ -239,8 +241,11 @@
     <!-- HEADER -->
     <header>
         <div class="container header-container">
-            <a href="/" class="logo">
-                <img src="file:///C:/Users/descarga/Desktop/ME-Logo-2.jpg" alt="MyExcursions Logo">
+            <a href="/" class="logo" aria-label="MyExcursions">
+                <svg class="logo-svg" viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MyExcursions ME logo">
+                    <text x="0" y="88" font-family="'Playfair Display', Georgia, serif" font-size="110" font-weight="700" fill="#2CB5C8" letter-spacing="-2">M</text>
+                    <text x="80" y="72" font-family="'Playfair Display', Georgia, serif" font-size="75" font-weight="900" fill="#DCC894" letter-spacing="-2">E</text>
+                </svg>
             </a>
             <ul class="nav-menu">
                 <li><a href="#">Destinations</a></li>
@@ -441,7 +446,12 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section footer-brand">
-                <a href="/" class="logo"><img src="file:///C:/Users/descarga/Desktop/ME-Logo-2.jpg" alt="MyExcursions Logo" style="height:40px;"></a>
+                <a href="/" class="logo" aria-label="MyExcursions">
+                    <svg class="logo-svg" viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MyExcursions ME logo" style="height:44px;">
+                        <text x="0" y="88" font-family="'Playfair Display', Georgia, serif" font-size="110" font-weight="700" fill="#2CB5C8" letter-spacing="-2">M</text>
+                        <text x="80" y="72" font-family="'Playfair Display', Georgia, serif" font-size="75" font-weight="900" fill="#DCC894" letter-spacing="-2">E</text>
+                    </svg>
+                </a>
                 <p>Over 1,000 destinations and 4,000 private experiences. Tailored for couples, families, and discerning groups worldwide.</p>
                 <div class="social-links">
                     <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg></a>
