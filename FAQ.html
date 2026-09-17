@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | MyExcursions – Frequently Asked Questions</title>
+    <meta name="description" content="Frequently asked questions about MyExcursions private tours, shore excursions, visas, services, booking, and travel planning.">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/playfair-display@latest/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/inter@latest/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/manrope@latest/index.css">
+    <style>
+        :root {
+            --turquesa: #2CB5C8;
+            --turquesa-dark: #1a8b9e;
+            --turquesa-light: #4FD1E3;
+            --beige: #DCC894;
+            --beige-dark: #C9B47A;
+            --dark: #0F172A;
+            --gray-900: #1F2937;
+            --gray-700: #374151;
+            --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
+            --gray-200: #E5E7EB;
+            --gray-100: #F3F4F6;
+            --bg-light: #F8FAFC;
+            --white: #FFFFFF;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05);
+            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.08);
+            --shadow-xl: 0 20px 40px -10px rgba(0,0,0,0.15);
+            --shadow-hover: 0 25px 50px -12px rgba(44,181,200,0.25);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --radius-full: 100px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',system-ui,sans-serif;color:var(--gray-900);background:var(--white);line-height:1.6;overflow-x:hidden}
+        h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:-0.02em}
+        .section-label{font-family:'Manrope',sans-serif;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--turquesa);margin-bottom:0.75rem;display:inline-flex;align-items:center;gap:0.5rem}
+        .section-label::before{content:'';width:24px;height:2px;background:var(--turquesa);display:inline-block}
+        a{text-decoration:none;color:inherit}
+        button{cursor:pointer;font-family:inherit;border:none;outline:none}
+        img{max-width:100%;display:block}
+        .container{max-width:1400px;margin:0 auto;padding:0 2rem}
+
+        /* LOGO SVG */
+        .logo-svg{height:52px;width:auto;display:block}
+
+        /* HEADER */
+        header{background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(0,0,0,0.04);padding:1rem 0;transition:all 0.3s}
+        .header-container{display:flex;align-items:center;justify-content:space-between}
+        .logo{display:flex;align-items:center;gap:0.5rem}
+        .nav-menu{display:flex;gap:2.25rem;list-style:none}
+        .nav-menu a{font-family:'Manrope',sans-serif;color:var(--gray-700);font-weight:500;font-size:0.95rem;position:relative;padding:0.5rem 0;transition:color 0.3s}
+        .nav-menu a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--turquesa);transition:width 0.3s}
+        .nav-menu a:hover{color:var(--turquesa)}
+        .nav-menu a:hover::after{width:100%}
+        .header-actions{display:flex;align-items:center;gap:1rem}
+        .icon-btn{width:40px;height:40px;background:var(--gray-100);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gray-700);transition:all 0.3s}
+        .icon-btn:hover{background:var(--turquesa);color:white;transform:translateY(-2px)}
+        .icon-btn svg{width:18px;height:18px}
+        .btn-primary{background:var(--dark);color:white;padding:0.75rem 1.75rem;border-radius:var(--radius-full);font-weight:600;font-size:0.9rem;font-family:'Manrope',sans-serif;transition:all 0.3s;display:inline-flex;align-items:center;gap:0.5rem}
+        .btn-primary:hover{background:var(--turquesa);transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+        .btn-primary svg{width:16px;height:16px}
+        .mobile-menu-btn{display:none;width:40px;height:40px;background:var(--gray-100);border-radius:50%;align-items:center;justify-content:center}
+        .mobile-menu-btn svg{width:20px;height:20px}
+
+        /* HERO FAQ */
+        .hero-faq{position:relative;height:60vh;min-height:450px;overflow:hidden;display:flex;align-items:center}
+        .hero-faq-bg{position:absolute;inset:0;z-index:0}
+        .hero-faq-bg img{width:100%;height:100%;object-fit:cover;animation:zoomOut 20s ease-out forwards}
+        @keyframes zoomOut{from{transform:scale(1.1)}to{transform:scale(1)}}
+        .hero-faq::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,42,0.3) 0%,rgba(15,23,42,0.65) 100%);z-index:1}
+        .hero-faq-content{position:relative;z-index:2;max-width:860px;color:white;padding:0 2rem;margin-left:8%}
+        .hero-faq h1{font-size:clamp(2.8rem,6vw,5.2rem);font-weight:700;line-height:1.05;margin-bottom:1.5rem;letter-spacing:-0.03em}
+        .hero-faq h1 .accent{font-style:italic;background:linear-gradient(120deg,var(--beige) 0%,var(--beige-dark) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+        .hero-faq-subtitle{font-size:1.15rem;line-height:1.7;max-width:620px;color:rgba(255,255,255,0.85)}
+
+        /* FAQ INTRO */
+        .faq-intro{padding:5rem 2rem 3rem;max-width:1400px;margin:0 auto;text-align:center}
+        .faq-intro h2{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin-bottom:1.5rem;color:var(--dark)}
+        .faq-intro h2 .accent{font-style:italic;color:var(--turquesa)}
+        .faq-intro p{color:var(--gray-500);font-size:1.05rem;max-width:750px;margin:0 auto;line-height:1.8}
+
+        /* FAQ SECTION */
+        .faq-section{padding:0 2rem 5rem;max-width:1400px;margin:0 auto}
+        .faq-category{margin-bottom:4rem}
+        .faq-category-header{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;padding-bottom:1rem;border-bottom:2px solid var(--gray-100)}
+        .faq-category-icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(44,181,200,0.12) 0%,rgba(44,181,200,0.05) 100%);display:flex;align-items:center;justify-content:center;color:var(--turquesa);flex:none}
+        .faq-category-icon svg{width:24px;height:24px}
+        .faq-category-header h3{font-size:clamp(1.4rem,2.5vw,1.9rem);color:var(--dark);font-family:'Playfair Display',serif;margin:0}
+
+        .faq-list{display:flex;flex-direction:column;gap:0.75rem}
+        .faq-item{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);transition:all 0.3s;overflow:hidden}
+        .faq-item:hover{border-color:var(--turquesa);box-shadow:var(--shadow-md)}
+        .faq-question{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.5rem 1.75rem;cursor:pointer;user-select:none;list-style:none}
+        .faq-question::-webkit-details-marker{display:none}
+        .faq-question h4{font-size:1.05rem;color:var(--dark);margin:0;font-family:'Playfair Display',serif;font-weight:700;line-height:1.35;flex:1}
+        .faq-question .faq-icon{width:32px;height:32px;border-radius:50%;background:var(--bg-light);display:flex;align-items:center;justify-content:center;color:var(--turquesa);transition:all 0.3s;flex:none}
+        .faq-question .faq-icon svg{width:16px;height:16px;transition:transform 0.3s}
+        .faq-item[open] .faq-question .faq-icon{background:var(--turquesa);color:white}
+        .faq-item[open] .faq-question .faq-icon svg{transform:rotate(180deg)}
+        .faq-answer{padding:0 1.75rem 1.75rem;color:var(--gray-700);font-size:0.95rem;line-height:1.8}
+        .faq-answer p{margin-bottom:1rem}
+        .faq-answer p:last-child{margin-bottom:0}
+        .faq-answer a{color:var(--turquesa);font-weight:600;border-bottom:1px solid transparent;transition:border-color 0.3s}
+        .faq-answer a:hover{border-bottom-color:var(--turquesa)}
+        .faq-answer ul{list-style:none;margin:0.75rem 0;padding-left:0}
+        .faq-answer ul li{padding-left:1.5rem;position:relative;margin-bottom:0.5rem}
+        .faq-answer ul li::before{content:'';position:absolute;left:0;top:0.65rem;width:6px;height:6px;border-radius:50%;background:var(--beige-dark)}
+        .faq-answer strong{color:var(--dark);font-weight:700}
+
+        /* SERVICE LEVELS CARDS */
+        .service-levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:1rem}
+        .service-level{background:var(--bg-light);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:1.5rem}
+        .service-level h5{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--dark);margin-bottom:0.5rem}
+        .service-level .level-tag{display:inline-block;font-family:'Manrope',sans-serif;font-size:0.65rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:0.25rem 0.65rem;border-radius:99px;margin-bottom:0.75rem}
+        .service-level .level-tag.economy{background:#E8F5E9;color:#2E7D32}
+        .service-level .level-tag.moderate{background:#FFF3E0;color:#E65100}
+        .service-level .level-tag.premium{background:#E3F2FD;color:#1565C0}
+        .service-level .level-tag.signature{background:rgba(220,200,148,0.3);color:#8B7355}
+        .service-level p{color:var(--gray-500);font-size:0.88rem;line-height:1.7;margin:0}
+
+        /* CTA */
+        .cta-section{margin:5rem 2rem;max-width:1400px;margin-left:auto;margin-right:auto;background:linear-gradient(135deg,#0F172A 0%,#1e293b 100%);border-radius:var(--radius-xl);padding:5rem 3rem;text-align:center;color:white;position:relative;overflow:hidden}
+        .cta-section::before{content:'';position:absolute;top:-50%;left:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(44,181,200,0.2) 0%,transparent 70%);border-radius:50%}
+        .cta-section::after{content:'';position:absolute;bottom:-50%;right:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(220,200,148,0.15) 0%,transparent 70%);border-radius:50%}
+        .cta-content{max-width:700px;margin:0 auto;position:relative;z-index:1}
+        .cta-section h2{font-size:clamp(2.2rem,5vw,3.2rem);margin-bottom:1rem;color:white;line-height:1.1}
+        .cta-section h2 .accent{font-style:italic;color:var(--turquesa-light)}
+        .cta-section p{font-size:1.1rem;margin-bottom:2.5rem;color:rgba(255,255,255,0.75);line-height:1.7}
+        .cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+        .cta-btn{padding:1rem 2rem;border-radius:var(--radius-full);font-weight:600;transition:all 0.3s;font-family:'Manrope',sans-serif;display:inline-flex;align-items:center;gap:0.5rem}
+        .cta-btn-primary{background:var(--turquesa);color:white}
+        .cta-btn-primary:hover{background:var(--turquesa-light);transform:translateY(-3px);box-shadow:0 10px 30px rgba(44,181,200,0.4)}
+        .cta-btn-secondary{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);color:white;border:1px solid rgba(255,255,255,0.2)}
+        .cta-btn-secondary:hover{background:rgba(255,255,255,0.2);transform:translateY(-3px)}
+        .cta-btn svg{width:18px;height:18px}
+
+        /* FOOTER */
+        footer{background:#0A0F1C;color:rgba(255,255,255,0.6);padding:5rem 2rem 2rem}
+        .footer-content{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:3rem}
+        .footer-brand .logo{color:white;margin-bottom:1rem}
+        .footer-brand p{font-size:0.9rem;line-height:1.7;margin-bottom:1.5rem}
+        .social-links{display:flex;gap:0.75rem}
+        .social-link{width:40px;height:40px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);transition:all 0.3s}
+        .social-link:hover{background:var(--turquesa);color:white;border-color:var(--turquesa);transform:translateY(-3px)}
+        .social-link svg{width:16px;height:16px}
+        .footer-section h4{color:white;margin-bottom:1.5rem;font-size:1rem;font-family:'Manrope',sans-serif;font-weight:700}
+        .footer-section ul{list-style:none}
+        .footer-section ul li{margin-bottom:0.7rem}
+        .footer-section a{color:rgba(255,255,255,0.6);font-size:0.9rem;transition:all 0.3s;display:inline-flex;align-items:center;gap:0.3rem}
+        .footer-section a:hover{color:var(--turquesa-light);gap:0.5rem}
+        .newsletter-form{display:flex;gap:0.5rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-full);padding:0.4rem}
+        .newsletter-form input{flex:1;background:transparent;border:none;outline:none;color:white;padding:0.5rem 1rem;font-family:inherit;font-size:0.9rem}
+        .newsletter-form input::placeholder{color:rgba(255,255,255,0.4)}
+        .newsletter-form button{background:var(--turquesa);color:white;padding:0.6rem 1.2rem;border-radius:var(--radius-full);font-weight:600;font-size:0.85rem;transition:all 0.3s}
+        .newsletter-form button:hover{background:var(--turquesa-light)}
+        .footer-bottom{max-width:1400px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.08);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.85rem}
+        .footer-legal{display:flex;gap:1.5rem}
+
+        /* WHATSAPP */
+        .whatsapp-float{position:fixed;bottom:30px;right:30px;background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,0.4);z-index:999;transition:all 0.3s}
+        .whatsapp-float:hover{transform:scale(1.1) translateY(-3px);box-shadow:0 15px 40px rgba(37,211,102,0.5)}
+        .whatsapp-float::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:#25D366;opacity:0.3;animation:ripple 2s infinite;z-index:-1}
+        @keyframes ripple{0%{transform:scale(1);opacity:0.3}100%{transform:scale(1.5);opacity:0}}
+        .whatsapp-float svg{width:30px;height:30px}
+
+        /* MOBILE NAV */
+        .mobile-bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);box-shadow:0 -5px 30px rgba(0,0,0,0.08);padding:0.6rem 0;z-index:998}
+        .mobile-nav-items{display:flex;justify-content:space-around;max-width:500px;margin:0 auto}
+        .mobile-nav-item{display:flex;flex-direction:column;align-items:center;gap:0.25rem;color:var(--gray-500);font-size:0.7rem;font-weight:600;font-family:'Manrope',sans-serif;padding:0.5rem 1rem;transition:color 0.3s;text-transform:uppercase;letter-spacing:0.05em}
+        .mobile-nav-item svg{width:22px;height:22px}
+        .mobile-nav-item.active{color:var(--turquesa)}
+
+        /* REVEAL */
+        .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.4,0,0.2,1)}
+        .reveal.visible{opacity:1;transform:translateY(0)}
+
+        /* RESPONSIVE */
+        @media(max-width:992px){
+            .nav-menu{display:none}
+            .mobile-menu-btn{display:flex}
+            .footer-content{grid-template-columns:1fr 1fr;gap:2rem}
+        }
+        @media(max-width:768px){
+            .hero-faq{height:50vh;min-height:350px}
+            .hero-faq-content{margin-left:0;padding:0 1.5rem}
+            .faq-intro{padding:3rem 1.5rem 2rem}
+            .faq-section{padding:0 1.5rem 3rem}
+            .faq-category{margin-bottom:3rem}
+            .faq-question{padding:1.25rem}
+            .faq-answer{padding:0 1.25rem 1.25rem}
+            .cta-section{padding:3rem 1.5rem;margin:3rem 1rem}
+            footer{padding:3rem 1.5rem 1.5rem}
+            .footer-content{grid-template-columns:1fr}
+            .footer-bottom{flex-direction:column;text-align:center}
+            .mobile-bottom-nav{display:block}
+            body{padding-bottom:80px}
+            .service-levels{grid-template-columns:1fr}
+        }
+        @media(max-width:480px){
+            .hero-faq h1{font-size:2.3rem}
+            .hero-faq-subtitle{font-size:1rem}
+            .faq-category-header{flex-direction:column;align-items:flex-start;gap:0.75rem}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-container">
+            <a href="/" class="logo" aria-label="MyExcursions">
+                <svg class="logo-svg" viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MyExcursions ME logo">
+                    <text x="0" y="88" font-family="'Playfair Display', Georgia, serif" font-size="110" font-weight="700" fill="#2CB5C8" letter-spacing="-2">M</text>
+                    <text x="80" y="72" font-family="'Playfair Display', Georgia, serif" font-size="75" font-weight="900" fill="#DCC894" letter-spacing="-2">E</text>
+                </svg>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Shore Excursions</a></li>
+                <li><a href="#">Private Tours</a></li>
+                <li><a href="#">Overland</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="header-actions">
+                <button class="icon-btn" aria-label="Search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                </button>
+                <button class="icon-btn" aria-label="Favorites">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                </button>
+                <button class="btn-primary">
+                    Plan My Trip
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO FAQ -->
+    <section class="hero-faq">
+        <div class="hero-faq-bg">
+            <img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=1600&q=85" alt="Traveler studying a map - MyExcursions FAQ" loading="eager">
+        </div>
+        <div class="hero-faq-content">
+            <h1>Frequently Asked <br><span class="accent">Questions</span></h1>
+            <p class="hero-faq-subtitle">Everything you need to know about booking, traveling, and experiencing MyExcursions private tours. Can't find your answer? Reach out — we're here to help.</p>
+        </div>
+    </section>
+
+    <!-- FAQ INTRO -->
+    <section class="faq-intro reveal">
+        <div class="section-label" style="justify-content:center">Help Center</div>
+        <h2>Your Questions, <span class="accent">Answered</span></h2>
+        <p>From booking procedures to visas and service levels — here are the most common questions we receive from travelers planning their private journeys.</p>
+    </section>
+
+    <!-- FAQ CONTENT -->
+    <section class="faq-section">
+
+        <!-- GENERAL QUESTIONS -->
+        <div class="faq-category reveal">
+            <div class="faq-category-header">
+                <div class="faq-category-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </div>
+                <h3>General Questions</h3>
+            </div>
+
+            <div class="faq-list">
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <h4>How do I request a quote or book a program?</h4>
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Simply send an email to <a href="mailto:info@myexcursions.com">info@myexcursions.com</a> with the details of when you are traveling and what services you are looking for. If you need transfers, be sure to include flight and hotel details, ship name and dates & services required.</p>
+                        <p>We offer excursions worldwide. If a destination or program is not being featured in our website, please let us know what you are looking for and we can provide information or suggestions. All our programs are customized to meet your needs and parameters, so quotes are as unique as you are! You will receive an email quote with details of the requested programs and pricing.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <h4>Can I book online?</h4>
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>MyExcursions is a boutique company offering personalized services. Each program must be created to meet your request so we do not provide an online booking option. Our website has an extensive selection of programs that can provide you ideas of what to see and do in each destination. Please email <a href="mailto:info@myexcursions.com">info@myexcursions.com</a> with your request for a quotation and booking.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <h4>How far in advance should I book?</h4>
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>All programs must be booked before travel commences. We suggest confirming as early as possible as services are often quoted on particular providers who may not be available close to travel dates. We can request service confirmations at any time, so take advantage of booking early to secure your desired programs.</p>
+                        <p><strong>Requests inside 14 days may incur rush fees.</strong></p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <h4>Should I book through my travel advisor?</h4>
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>We do suggest you book through your travel advisor, who can verify ship's port times or ensure that your programs will work with your travel itinerary. Your travel advisor can assist in answering any questions you may have and will also be able to print your vouchers for you. For those of you who do not have access to email must work through your travel adviser.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <h4>When will I receive my final vouchers and documents?</h4>
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Final description and vouchers will be sent once services are paid in full and all details are reconfirmed by our operators and your travel advisor. Meet location details are provided on the voucher and the description.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <h4>What if I can't find my driver or guide on the day?</h4>
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>If you have any difficulty locating your driver or guide on the day, call the local help number on your voucher. Or you can call MyExcursions, but this would not be as expedient as calling the local number as we will have to then contact the operator and relay information to them.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <h4>Are gratuities included?</h4>
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Gratuities are not included unless specified on your final program and voucher. Gratuities are usually left at the discretion of each guest to tip based on the quality of service received. There is no set percentage.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <h4>Do you recommend trip cancellation insurance?</h4>
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>We strongly suggest trip cancellation insurance through your travel advisor or MyExcursions. <strong>Cruise line insurance does not cover independent programs.</strong> Trip cancellation insurance is recommended for services and delayed or missed port is a covered reason.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <h4>What happens if my ship misses a port or there's an emergency?</h4>
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>If you are already traveling and your ship will be missing an upcoming port, or any other emergency situation that will affect an upcoming program, you are required to contact the local emergency contact number provided on your voucher and also to notify MyExcursions.com of any such situations.</p>
+                        <p>In most cases we can obtain a refund from our operators. However if cancellation is within 24 hours, there may be some cancellation penalties as services are already 'in motion'. MyExcursions will work with our local operator to obtain a full refund or refund with the minimum cancellation fees.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <h4>How do I contact MyExcursions in an emergency?</h4>
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>You should email <a href="mailto:info@myexcursions.com">info@myexcursions.com</a> at your first opportunity to notify us of the circumstances. You can also reach us via the office iPhone <strong>1 (954) 972-6306</strong>. This number can receive texts and WhatsApp messages. Calls are monitored at night, but email and texts may not be read overnight. If you do reach voice mail, however, please leave a detailed message with a call back number if you have a working mobile phone with you.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <h4>Will I miss the ship if my tour returns late?</h4>
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>All our programs will be scheduled to return to the port at least one hour prior to ship's sailing time. Should you be delayed on your return to the port, have your driver or guide contact their office so they may be able to contact the ship's port agent to advise them of your delayed return.</p>
+                        <p><strong>In all the 14+ years we have been operating, no guest has ever missed the ship due to a late return.</strong></p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <h4>What time zone are the tour departure times in?</h4>
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>As you travel, you will very often cross time zones. All MyExcursions departure times are listed in <strong>"Local Time"</strong>. This means the trip begins according to the time zone of the port you are visiting. Some cruise lines change their clocks on board ship to reflect the local time, others do not. In addition, some islands and ports observe Daylight Savings Time, while others stay on Standard Time.</p>
+                        <p>You can determine what the local time will be compared with your port of departure by checking on <a href="http://www.worldtimeserver.com" target="_blank" rel="noopener">www.worldtimeserver.com</a>.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <h4>Are tours available in languages other than English?</h4>
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Typically our tours are provided in English. If you do have other language requirements, please advise at the time of booking and we can check availability of guides for non-English speaking guests. Guide services may be at a higher price for languages other than English. Note all our descriptions and documentation is available only in English.</p>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+
+        <!-- VISAS -->
+        <div class="faq-category reveal">
+            <div class="faq-category-header">
+                <div class="faq-category-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <h3>Visas</h3>
+            </div>
+
+            <div class="faq-list">
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <h4>Do I need a visa to visit Russia with MyExcursions?</h4>
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>All visitors to Russia must be in possession of a Russian Tourist Visa, however <strong>this requirement is waived for MyExcursions.com guests</strong> of all nationalities while they are participating on one of our Programs. You will not require a visa to go ashore while participating on our tour.</p>
+                        <p>Please note however that if you wish to go ashore while <em>not</em> participating on one our programs then you must be in possession of a valid Russian Tourist Visa.</p>
+                        <p>You can proceed ashore with the following documents:</p>
+                        <ul>
+                            <li>A valid passport.</li>
+                            <li>Voucher tour ticket — one per person.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <h4>Do I need a visa for other countries?</h4>
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>You need to check with your travel adviser or cruise line regarding visa requirements for any upcoming cruise. U.S. Citizens typically must obtain individual visas for certain countries. Be sure to check with your cruise line or travel advisor regarding visa requirements.</p>
+                        <p>In some cases, you may need multiple entry visas. Cruise lines often obtain blanket visas for guests to go ashore – some lines charge guests for these visas. Russia, Egypt, Vietnam fall into this category for example. If flying into or out of a country where you need a visa, this must typically be obtained in advance or on arrival. You must check with your cruise line or travel advisor to verify your exact visa requirements.</p>
+                        <p>Your passport must also be <strong>valid for 6 months beyond your return home date</strong>.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <h4>Can MyExcursions help with blanket visas?</h4>
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Where blanket visas are issued, check with us as we are in some cases able to provide these as part of our tour service – such as in <strong>Russia, Vietnam, and Egypt</strong>.</p>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+
+        <!-- SERVICES -->
+        <div class="faq-category reveal">
+            <div class="faq-category-header">
+                <div class="faq-category-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <h3>Services</h3>
+            </div>
+
+            <div class="faq-list">
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <h4>What service levels are available for my program?</h4>
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Different levels of service may be available for the programs you desire. This clarifies the service levels:</p>
+
+                        <div class="service-levels">
+                            <div class="service-level">
+                                <span class="level-tag economy">Entry</span>
+                                <h5>Transfer Chauffeur</h5>
+                                <p>No commentary should be expected, and your driver may only speak limited English — enough to provide the meet, assist and transfer services.</p>
+                            </div>
+
+                            <div class="service-level">
+                                <span class="level-tag moderate">Moderate</span>
+                                <h5>English Speaking Driver</h5>
+                                <p>An English speaking driver will be able to provide you a good amount of information regarding your destination, make suggestions and ensure you have a great day, but they are <strong>not licensed or permitted</strong> to accompany you inside museums, churches or other monuments and provide guiding services. This is generally the least expensive tour option. It is not available in all locations.</p>
+                            </div>
+
+                            <div class="service-level">
+                                <span class="level-tag premium">Premium</span>
+                                <h5>Tour Escort</h5>
+                                <p>A trained escort who can provide commentary during the driving portions of your tour and can join you on foot and can provide commentary but are <strong>not licensed</strong> to provide guide services inside historical sights or museums. This is a moderately priced option and is not available in all locations.</p>
+                            </div>
+
+                            <div class="service-level">
+                                <span class="level-tag signature">Signature</span>
+                                <h5>Licensed Guide</h5>
+                                <p>While qualifications for guides vary throughout the world, licensed guides have attained a degree of certification, which allows them to provide <strong>full guiding services</strong> providing commentary in the vehicle, outside and inside historical sights and museums. In many countries a licensed guide must carry their license badge whenever they are offering their services. If your program entails extensive visits, a licensed guide can be invaluable in bringing a destination alive. This is typically the most expensive option but provides the highest degree of service. Typically, this is available in all locations. In some places the guide may also be the driver.</p>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section reveal">
+        <div class="cta-content">
+            <div class="section-label" style="justify-content:center;color:var(--turquesa-light)">Still Have Questions?</div>
+            <h2>We're Here to <span class="accent">Help</span></h2>
+            <p>Whether exploring European castles and cathedrals, temples and shrines in Asia or the wilds of Patagonia - we make it happen. With over 40 years in destination planning MyExcursions staff are ready to design a personalized journey just for you.</p>
+            <div class="cta-buttons">
+                <a href="/contacto/" class="cta-btn cta-btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    Send a Message
+                </a>
+                <a href="https://wa.me/584142894116" target="_blank" class="cta-btn cta-btn-secondary">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+                    WhatsApp Chat
+                </a>
+                <a href="tel:+19549726306" class="cta-btn cta-btn-secondary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                    Call Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="logo" aria-label="MyExcursions">
+                    <svg class="logo-svg" viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MyExcursions ME logo" style="height:44px;">
+                        <text x="0" y="88" font-family="'Playfair Display', Georgia, serif" font-size="110" font-weight="700" fill="#2CB5C8" letter-spacing="-2">M</text>
+                        <text x="80" y="72" font-family="'Playfair Display', Georgia, serif" font-size="75" font-weight="900" fill="#DCC894" letter-spacing="-2">E</text>
+                    </svg>
+                </a>
+                <p>Over 1,000 destinations and 4,000 private experiences. Tailored for couples, families, and discerning groups worldwide.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg></a>
+                    <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+                    <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#0A0F1C"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Explore</h4>
+                <ul><li><a href="#">Europe</a></li><li><a href="#">Americas</a></li><li><a href="#">Asia</a></li><li><a href="#">Africa</a></li><li><a href="#">Oceania</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul><li><a href="#">Shore Excursions</a></li><li><a href="#">Private Tours</a></li><li><a href="#">Overland Programs</a></li><li><a href="#">Luxury Yachts</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>Stay Inspired</h4>
+                <p style="font-size:0.9rem;margin-bottom:1rem">Get exclusive travel guides and special offers directly in your inbox.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault();alert('Thanks for subscribing!')">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 MyExcursions. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/584142894116" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-bottom-nav">
+        <div class="mobile-nav-items">
+            <a href="#" class="mobile-nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a>
+            <a href="#" class="mobile-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>Search</a>
+            <a href="#" class="mobile-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Favorites</a>
+            <a href="#" class="mobile-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</a>
+        </div>
+    </nav>
+
+    <script>
+        // Scroll Reveal
+        const revealElements=document.querySelectorAll('.reveal');
+        const observer=new IntersectionObserver((entries)=>{
+            entries.forEach((entry)=>{
+                if(entry.isIntersecting){
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+        revealElements.forEach(el=>observer.observe(el));
+
+        // Mobile menu
+        const mobileBtn=document.querySelector('.mobile-menu-btn');
+        const navMenu=document.querySelector('.nav-menu');
+        mobileBtn.addEventListener('click',()=>{
+            navMenu.classList.toggle('open');
+            navMenu.style.display=navMenu.classList.contains('open')?'flex':'none';
+            if(window.innerWidth<=768&&navMenu.classList.contains('open')){
+                navMenu.style.flexDirection='column';
+                navMenu.style.position='absolute';
+                navMenu.style.top='100%';
+                navMenu.style.left='0';
+                navMenu.style.width='100%';
+                navMenu.style.background='white';
+                navMenu.style.padding='2rem';
+                navMenu.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)';
+                navMenu.style.gap='1.5rem';
+                navMenu.style.zIndex='999';
+            }
+        });
+
+        // Mobile bottom nav
+        document.querySelectorAll('.mobile-nav-item').forEach(item=>{
+            item.addEventListener('click',(e)=>{
+                e.preventDefault();
+                document.querySelectorAll('.mobile-nav-item').forEach(i=>i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+
+        // Header scroll
+        window.addEventListener('scroll',()=>{
+            const header=document.querySelector('header');
+            const currentScroll=window.pageYOffset;
+            header.style.boxShadow=currentScroll>50?'0 2px 20px rgba(0,0,0,0.05)':'none';
+        });
+    </script>
+</body>
+</html>
