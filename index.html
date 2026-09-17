@@ -6,7 +6,7 @@
     <meta name="description" content="Over 1,000 destinations and 4,000 private programs. From Cinque Terre to Iguazu Falls, enjoy private shore excursions, catamaran cruises, wine tastings, and overland programs. Travel beyond expectations.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --turquesa: #2CB5C8;
@@ -45,11 +45,13 @@
         img{max-width:100%;display:block}
         .container{max-width:1400px;margin:0 auto;padding:0 2rem}
 
+        /* LOGO SVG */
+        .logo-svg{height:52px;width:auto;display:block}
+
         /* HEADER */
         header{background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(0,0,0,0.04);padding:1rem 0;transition:all 0.3s}
         .header-container{display:flex;align-items:center;justify-content:space-between}
         .logo{display:flex;align-items:center;gap:0.5rem}
-        .logo img{height:50px;width:auto;display:block}
         .nav-menu{display:flex;gap:2.25rem;list-style:none}
         .nav-menu a{font-family:'Manrope',sans-serif;color:var(--gray-700);font-weight:500;font-size:0.95rem;position:relative;padding:0.5rem 0;transition:color 0.3s}
         .nav-menu a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--turquesa);transition:width 0.3s}
@@ -173,21 +175,6 @@
         .app-card:hover .card-action{gap:0.6rem}
         .card-action svg{width:14px;height:14px}
 
-        /* FEATURED */
-        .featured-section{max-width:1400px;margin:4rem auto;padding:0 2rem}
-        .featured-card{background:linear-gradient(135deg,var(--dark) 0%,#1e293b 100%);border-radius:var(--radius-xl);overflow:hidden;display:grid;grid-template-columns:1.2fr 1fr;min-height:480px;position:relative}
-        .featured-image{position:relative;overflow:hidden}
-        .featured-image img{width:100%;height:100%;object-fit:cover}
-        .featured-content{padding:3.5rem;color:white;display:flex;flex-direction:column;justify-content:center}
-        .featured-tag{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(220,200,148,0.15);border:1px solid rgba(220,200,148,0.3);color:var(--beige);padding:0.4rem 1rem;border-radius:var(--radius-full);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;width:fit-content;margin-bottom:1.5rem}
-        .featured-content h3{font-size:2.5rem;line-height:1.1;margin-bottom:1rem;color:white}
-        .featured-content p{color:rgba(255,255,255,0.7);font-size:1.05rem;line-height:1.7;margin-bottom:2rem}
-        .featured-features{display:flex;gap:2rem;margin-bottom:2rem;flex-wrap:wrap}
-        .feature-item{display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;color:rgba(255,255,255,0.85)}
-        .feature-item svg{width:18px;height:18px;color:var(--turquesa-light)}
-        .featured-btn{background:white;color:var(--dark);padding:1rem 2rem;border-radius:var(--radius-full);font-weight:700;font-family:'Manrope',sans-serif;width:fit-content;transition:all 0.3s;display:inline-flex;align-items:center;gap:0.5rem}
-        .featured-btn:hover{background:var(--turquesa);color:white;transform:translateY(-2px);box-shadow:0 10px 30px rgba(44,181,200,0.4)}
-
         /* TRUST */
         .trust-section{background:var(--bg-light);padding:5rem 2rem;margin-top:4rem;position:relative;overflow:hidden}
         .trust-section::before{content:'';position:absolute;top:-50%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(44,181,200,0.05) 0%,transparent 70%);border-radius:50%}
@@ -295,9 +282,6 @@
 
         /* RESPONSIVE */
         @media (max-width:1024px){
-            .featured-card{grid-template-columns:1fr}
-            .featured-image{height:320px}
-            .featured-content{padding:2.5rem}
             .regions-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
             .region-card:first-child{grid-row:span 1}
             .region-card{height:260px}
@@ -316,9 +300,6 @@
             .intro-section{grid-template-columns:1fr;text-align:center}
             .intro-content p{margin:0 auto}
             .cards-grid{grid-template-columns:1fr;padding:1.5rem;gap:1.25rem}
-            .featured-section{padding:0 1.5rem}
-            .featured-content{padding:2rem}
-            .featured-content h3{font-size:1.8rem}
             .trust-section{padding:3rem 1.5rem}
             .testimonials-section{padding:3rem 1.5rem}
             .regions-section{padding:0 1.5rem}
@@ -344,8 +325,11 @@
     <!-- HEADER -->
     <header>
         <div class="container header-container">
-            <a href="/" class="logo">
-                <img src="file:///C:/Users/descarga/Desktop/ME-Logo-2.jpg" alt="MyExcursions Logo">
+            <a href="/" class="logo" aria-label="MyExcursions">
+                <svg class="logo-svg" viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MyExcursions ME logo">
+                    <text x="0" y="88" font-family="'Playfair Display', Georgia, serif" font-size="110" font-weight="700" fill="#2CB5C8" letter-spacing="-2">M</text>
+                    <text x="80" y="72" font-family="'Playfair Display', Georgia, serif" font-size="75" font-weight="900" fill="#DCC894" letter-spacing="-2">E</text>
+                </svg>
             </a>
             <ul class="nav-menu">
                 <li><a href="destinatios">Destinations</a></li>
@@ -584,8 +568,6 @@
         </div>
     </section>
 
-    <!-- FEATURED (Sección retirada por solicitud de Tim - reemplazada por enlace a home) -->
-
     <!-- TRUST -->
     <section class="trust-section">
         <div class="trust-container">
@@ -751,7 +733,12 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section footer-brand">
-                <a href="/" class="logo"><img src="file:///C:/Users/descarga/Desktop/ME-Logo-2.jpg" alt="MyExcursions Logo" style="height:40px;"></a>
+                <a href="/" class="logo" aria-label="MyExcursions">
+                    <svg class="logo-svg" viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MyExcursions ME logo" style="height:44px;">
+                        <text x="0" y="88" font-family="'Playfair Display', Georgia, serif" font-size="110" font-weight="700" fill="#2CB5C8" letter-spacing="-2">M</text>
+                        <text x="80" y="72" font-family="'Playfair Display', Georgia, serif" font-size="75" font-weight="900" fill="#DCC894" letter-spacing="-2">E</text>
+                    </svg>
+                </a>
                 <p>Over 1,000 destinations and 4,000 private experiences. Tailored for couples, families, and discerning groups worldwide.</p>
                 <div class="social-links">
                     <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg></a>
